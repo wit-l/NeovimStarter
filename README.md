@@ -1,2 +1,2 @@
 # NeovimStarter
-my neovim config files
+my neovim template
