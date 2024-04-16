@@ -45,6 +45,10 @@ keymap.set("n", "<C-w><right>", "<C-w>>", opts)
 keymap.set("n", "<C-w><up>", "<C-w>+", opts)
 keymap.set("n", "<C-w><down>", "<C-w>-", opts)
 
+keymap.set("n", "<c-\\>", function()
+  LazyVim.terminal()
+end, { desc = "Terminal (cwd Dir)" })
+
 -- Diagnostic
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
