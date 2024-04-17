@@ -14,15 +14,6 @@ return {
       })
     end,
   },
-  -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
@@ -56,26 +47,6 @@ return {
             ".git",
             ".vscode"
           ),
-
-          single_file_support = true,
-          initialization_options = {
-            -- `clangd` 初始化选项
-            cache = {
-              directory = vim.fn.stdpath("cache") .. "/clangd_cache", -- 缓存目录
-            },
-          },
-
-          settings = {
-            -- `clangd` 设置
-            clangd = {
-              formatting = {
-                style = "file", -- 格式化风格
-              },
-              diagnostics = {
-                enable = true, -- 启用诊断
-              },
-            },
-          },
         },
         cssls = {},
         tailwindcss = {
