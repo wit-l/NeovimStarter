@@ -35,7 +35,7 @@ return {
       ---@type lspconfig.options
       servers = {
         clangd = {
-          cmd = { "clangd", "--background-index" },
+          cmd = { "D:\\Software\\llvm_mingw_ucrt\\mingw64\\bin\\clangd.exe", "--background-index" },
           filetypes = { "c", "C", "cxx", "cc", "cpp" },
           root_dir = require("lspconfig.util").root_pattern(
             ".clangd",

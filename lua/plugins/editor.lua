@@ -195,8 +195,8 @@ return {
       -- Your options go here
       -- name = "venv",
       auto_refresh = false,
-      anaconda_base_path = "/opt/anaconda3",
-      anaconda_envs_path = "/opt/anaconda3/envs",
+      anaconda_base_path = "D:\\Software\\anaconda3",
+      anaconda_envs_path = "D:\\Software\\anaconda3\\envs",
     },
     lazy = true,
     event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
