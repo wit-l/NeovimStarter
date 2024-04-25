@@ -207,4 +207,5 @@ return {
       { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Select Python Venv(Cached)" },
     },
   },
+  { "LunarVim/bigfile.nvim" },
 }
