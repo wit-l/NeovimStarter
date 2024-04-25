@@ -54,8 +54,3 @@ keymap.set("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 -- Jump next/prev word in InsertMode
 vim.keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i")
 vim.keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i")
-
--- Diagnostic
-keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
-end, opts)
