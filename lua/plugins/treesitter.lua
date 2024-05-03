@@ -3,6 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "html",
         "javascript",
         "json",
         "lua",
@@ -13,6 +14,7 @@ return {
         "astro",
         "cmake",
         "cpp",
+        "c",
         "css",
         "fish",
         "gitignore",
