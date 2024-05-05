@@ -6,8 +6,7 @@ forked from https://github.com/LazyVim/starter.git
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 The display image is as follows
-![pic_of_nvim](./pic_nvim1.png)
-![pic_of_nvim](./pic_nvim2.png)
+![pic_of_nvim](./nvim.png)
 
 My Terminal is WindowsTerminal(preview).
 
@@ -25,4 +24,3 @@ Require:
 - [Lua](https://github.com/DevelopersCommunity/cmake-lua)
 
 Use anaconda to manage python environment, and neovim uses venv-selector plugin to switch python environment. **Pay attention to modifying anaconda path in lua/plugins/editor.lua.**
-
