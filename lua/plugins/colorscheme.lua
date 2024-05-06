@@ -11,7 +11,6 @@ return {
   },
   {
     "xiyaowong/transparent.nvim",
-    lazy = true,
     priority = 1000,
   },
 }
