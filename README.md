@@ -6,7 +6,10 @@ forked from https://github.com/LazyVim/starter.git
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 The display image is as follows
-![pic_of_nvim](./nvim.png)
+![nvim neo-tree](pic/nvim-neotree.png)
+![nvim hover](pic/nvim-hover.png)
+![nvim float window](pic/nvim-float-window.png)
+![nvim term](pic/nvim-term.png)
 
 My Terminal is WindowsTerminal(preview).
 
