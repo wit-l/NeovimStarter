@@ -10,6 +10,7 @@
 ![nvim neo-tree](pic/nvim-neotree.png)
 ![nvim hover](pic/nvim-hover-1.png)
 ![nvim hover](pic/nvim-hover-2.png)
+![nvim hover](pic/nvim-hover-3.png)
 ![nvim float window](pic/nvim-float-window.png)
 ![nvim term](pic/nvim-term.png)
 
