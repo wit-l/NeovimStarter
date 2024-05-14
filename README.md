@@ -1,6 +1,6 @@
 # NeovimStarter
 
-my neovim config(Applicable to linux platform, please refer to windows Branch for windows platform.)
+my neovim config(Applicable to linux platform, please refer to windows branch for windows platform.)
 
 forked from [LazyVim](https://github.com/LazyVim/starter.git)
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
