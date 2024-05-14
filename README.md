@@ -7,11 +7,11 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 **Pay attention to replace the url of lazyvim with the url of this repository when cloning.**
 
 The display image is as follows
-![nvim neo-tree](pic/nvim-neotree.png)
-![nvim hover](pic/nvim-hover-1.png)
-![nvim hover](pic/nvim-hover-2.png)
-![nvim float window](pic/nvim-float-window.png)
-![nvim term](pic/nvim-term.png)
+![nvim neo-tree](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-neotree.png)
+![nvim hover](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-hover-1.png)
+![nvim hover](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-hover-2.png)
+![nvim float window](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-float-window.png)
+![nvim term](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-term.png)
 
 My Terminal is [WindowsTerminal(preview)](https://github.com/microsoft/terminal).
 
