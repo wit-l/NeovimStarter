@@ -1,16 +1,14 @@
 return {
   {
-    "craftzdog/solarized-osaka.nvim",
-    lazy = true,
-    priority = 1000,
-    opts = function()
-      return {
-        transparent = true,
-      }
-    end,
-  },
-  {
     "xiyaowong/transparent.nvim",
     priority = 1000,
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      transparent_background = true,
+    },
   },
 }
