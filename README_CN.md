@@ -7,11 +7,11 @@
 **注意克隆时将lazyvim的url替换为本仓库的url**
 
 展示图：
-![nvim neo-tree](pic/nvim-neotree.png)
-![nvim hover](pic/nvim-hover-1.png)
-![nvim hover](pic/nvim-hover-2.png)
-![nvim float window](pic/nvim-float-window.png)
-![nvim term](pic/nvim-term.png)
+![nvim neo-tree](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-neotree.png)
+![nvim hover](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-hover-1.png)
+![nvim hover](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-hover-2.png)
+![nvim float window](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-float-window.png)
+![nvim term](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-term.png)
 
 演示所用终端为[Windows Terminal(preview)](https://github.com/microsoft/terminal)
 
