@@ -25,13 +25,13 @@ Optional Requirements:
   It is suggested to download the gcc/g++ compiler with the ucrt runtime and LLVM/Clang/LLD/LLDB version.
   **Make c/cpp lsp--clangd in lua/plugins/lsp.lua point to clangd.exe in this software package, otherwise, clangd can't find the standard library of c/cpp, resulting in abnormal syntax.**
 - [fd](https://github.com/sharkdp/fd)
-Search files.
+  Search files.
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-Search content from files.
+  Search content from files.
 - [tree-sitter](https://github.com/tree-sitter/tree-sitter)
-Provide advanced function by building syntax tree.
+  Provide advanced function by building syntax tree.
 - [fzf](https://github.com/junegunn/fzf)
-Fuzzy search
+  Fuzzy search
 - [Lua](https://github.com/DevelopersCommunity/cmake-lua)
 - [Maple Mono NF (CN)](https://github.com/subframe7536/maple-font)
   a nerd font
