@@ -10,8 +10,10 @@ vim.opt.cmdheight = 0
 vim.opt.laststatus = 2
 vim.opt.scrolloff = 10
 vim.opt.splitkeep = "cursor"
+vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+vim.opt.path:append({ "**" })
 vim.opt.wrap = false
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
