@@ -59,6 +59,24 @@ return {
     },
   },
 
+  -- lazygit
+  {
+    "kdheepak/lazygit.nvim",
+    keys = {
+      {
+        ";c",
+        ":LazyGit<Return>",
+        silent = true,
+        noremap = true,
+        desc = "lazygit",
+      },
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
   -- filename
   {
     "b0o/incline.nvim",
