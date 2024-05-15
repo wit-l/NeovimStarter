@@ -12,6 +12,7 @@ The display image is as follows
 ![nvim hover](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-hover-2.png)
 ![nvim float window](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-float-window.png)
 ![nvim term](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-term.png)
+![nvim database](https://github.com/wit-l/NeovimStarter/blob/windows/pic/nvim-database.png)
 
 My Terminal is [WindowsTerminal(preview)](https://github.com/microsoft/terminal).
 
