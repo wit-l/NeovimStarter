@@ -134,6 +134,7 @@ return {
       {
         "<leader>d",
         "<cmd>Neotree<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>",
+        desc = "DataBaseUI",
       },
     },
   },
