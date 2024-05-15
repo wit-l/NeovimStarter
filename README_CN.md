@@ -13,6 +13,7 @@
 ![nvim hover](pic/nvim-hover-3.png)
 ![nvim float window](pic/nvim-float-window.png)
 ![nvim term](pic/nvim-term.png)
+![nvim database](pic/nvim-database.png)
 
 演示所用终端为[Windows Terminal(preview)](https://github.com/microsoft/terminal)
 
