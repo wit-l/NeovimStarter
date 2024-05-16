@@ -18,7 +18,7 @@ return {
       {
         "\\r",
         "<cmd>Rest run<cr>",
-        desc = "Test the current file",
+        desc = "Run request under the cursor",
       },
     },
   },
