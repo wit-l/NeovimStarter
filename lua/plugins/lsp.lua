@@ -14,7 +14,6 @@ return {
         "html-lsp",
         "emmet-language-server",
         "pyright",
-        "clangd",
       })
     end,
   },
