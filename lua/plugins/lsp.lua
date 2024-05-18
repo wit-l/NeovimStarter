@@ -31,7 +31,7 @@ return {
     end,
     ---@class PluginLspOpts
     opts = {
-      inlay_hints = { enabled = true },
+      -- inlay_hints = { enabled = true },
       ---@type lspconfig.options
       servers = {
         clangd = {
