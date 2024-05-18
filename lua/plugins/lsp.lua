@@ -10,7 +10,11 @@ return {
         "shfmt",
         "tailwindcss-language-server",
         "typescript-language-server",
+        "html-lsp",
         "css-lsp",
+        "emmet-language-server",
+        "pyright",
+        "clangd",
       })
     end,
   },
@@ -31,7 +35,6 @@ return {
     end,
     ---@class PluginLspOpts
     opts = {
-      inlay_hints = { enabled = true },
       ---@type lspconfig.options
       servers = {
         clangd = {
