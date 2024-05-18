@@ -36,7 +36,7 @@ Optional Requirements:
 - [Maple Mono NF (CN)](https://github.com/subframe7536/maple-font)
   a nerd font
 - [lazygit](https://github.com/jesseduffield/lazygit)
-  Quick installation suggestion: You can install it with pip install lazygit or conda install lazygit if you have python or anaconda.
+  Quick installation suggestion: You can install it with pip or conda if you have python or anaconda.
 - [Python](https://www.python.org/)
 - [Node](https://nodejs.org/)
 
