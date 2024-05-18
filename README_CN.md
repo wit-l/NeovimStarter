@@ -22,8 +22,8 @@ WT的配置文件在 [这里](https://github.com/WittyCo/Dotfiles/blob/main/wind
 
 可选依赖:
 
-- [gcc/g++](https://winlibs.com/)
-  部分插件构建需要
+- [gcc/g++](https://gcc.gnu.org/)
+  使用包管理器安装，例如：`sudo apt install gcc g++`部分插件构建需要
 - [fd](https://github.com/sharkdp/fd)
   用于快速查找文件/文件夹
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
