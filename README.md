@@ -6,7 +6,7 @@ forked from [LazyVim](https://github.com/LazyVim/starter.git)
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 **Pay attention to replace the url of lazyvim with the url of this repository when cloning.**
 
-The display image is as follows
+The display images are as follows:
 ![nvim neo-tree](pic/nvim-neotree.png)
 ![nvim hover](pic/nvim-hover-1.png)
 ![nvim hover](pic/nvim-hover-2.png)
