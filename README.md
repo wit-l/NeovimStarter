@@ -22,8 +22,8 @@ The default shortcut key for switching focus mode (WT without border) is ALT+Z i
 
 Optional Requirements:
 
-- [gcc/g++](https://winlibs.com/)
-  Some plugins need to be compiled.
+- [gcc/g++](https://gcc.gnu.org/)
+  Using package manager to install, such as `sudo apt install gcc g++`. Some plugins need to be compiled.
 - [fd](https://github.com/sharkdp/fd)
   Search files.
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
