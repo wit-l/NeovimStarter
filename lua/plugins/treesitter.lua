@@ -6,6 +6,7 @@ return {
         "html",
         "javascript",
         "json",
+        "jsonc",
         "lua",
         "python",
         "tsx",
@@ -25,6 +26,7 @@ return {
         "rust",
         "scss",
         "sql",
+        "regex",
       },
     },
     config = function(_, opts)
