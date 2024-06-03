@@ -194,21 +194,41 @@ return {
   },
   {
     "linux-cultist/venv-selector.nvim",
-    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-    opts = {
-      -- Your options go here
-      -- name = "venv",
-      auto_refresh = false,
-      anaconda_base_path = "D:\\Software\\anaconda3",
-      anaconda_envs_path = "D:\\Software\\anaconda3\\envs",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "mfussenegger/nvim-dap",
+      "mfussenegger/nvim-dap-python", --optional
+      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
     },
     lazy = true,
     event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    branch = "regexp", -- This is the regexp branch, use this for the new version
+    config = function()
+      require("venv-selector").setup({
+        settings = {
+          options = {
+            -- enable_default_searches = true,
+            enabled_cached_venvs = true,
+            show_telescope_search_type = true,
+            notify_user_on_venv_activation = true,
+            set_environment_variables = true,
+          },
+          search = {
+            anaconda_base = {
+              command = "fd \\python.exe$ D:\\Software\\anaconda3 -p --color never -E \\proc -d 1",
+              type = "anaconda",
+            },
+            anaconda_envs = {
+              command = "fd \\python.exe$ D:\\Software\\anaconda3\\envs --full-path --color never -E \\proc -d 2",
+              type = "anaconda",
+            },
+          },
+        },
+      })
+    end,
     keys = {
       -- Keymap to open VenvSelector to pick a venv.
       { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select Python Venv" },
-      -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-      { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Select Python Venv(Cached)" },
     },
   },
   { "LunarVim/bigfile.nvim" },
