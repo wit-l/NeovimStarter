@@ -112,7 +112,7 @@ return {
       local actions = require("telescope.actions")
       local fb_actions = require("telescope").extensions.file_browser.actions
 
-      opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
+      opts.defaults = vim.tbl_deep_extend("force", { opts.defaults }, {
         wrap_results = true,
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
@@ -237,5 +237,19 @@ return {
       { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select Python Venv" },
     },
   },
-  { "LunarVim/bigfile.nvim" },
+  {
+    "LunarVim/bigfile.nvim",
+    opts = {
+      features = { -- features to disable
+        "indent_blankline",
+        "illuminate",
+        "lsp",
+        "treesitter",
+        "syntax",
+        "matchparen",
+        "vimopts",
+        "filetype",
+      },
+    },
+  },
 }
