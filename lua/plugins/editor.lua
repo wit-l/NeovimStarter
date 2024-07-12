@@ -12,6 +12,9 @@ return {
       {
         "<leader>fP",
         function()
+          -- require("fzf-lua").files({
+          --   cwd = require("lazy.core.config").options.root,
+          -- })
           require("telescope.builtin").find_files({
             cwd = require("lazy.core.config").options.root,
           })
@@ -21,8 +24,8 @@ return {
       {
         ";f",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.find_files({
+          -- require("fzf-lua").files()
+          require("telescope.builtin").find_files({
             no_ignore = false,
             hidden = true,
           })
@@ -32,56 +35,55 @@ return {
       {
         ";r",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.oldfiles()
+          -- require("fzf-lua").oldfiles()
+          require("telescope.builtin").oldfiles()
         end,
         desc = "Recent Files",
       },
       {
         ";g",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.live_grep()
+          -- require("fzf-lua").live_grep()
+          require("telescope.builtin").live_grep()
         end,
         desc = "Grep(cwd)",
       },
       {
         "\\\\",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.buffers()
+          -- require("fzf-lua").buffers()
+          require("telescope.builtin").buffers()
         end,
         desc = "Buffers",
       },
       {
         ";t",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.help_tags()
+          -- require("fzf-lua").helptags()
+          require("telescope.builtin").help_tags()
         end,
         desc = "Help Pages",
       },
       {
         ";;",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.resume()
+          -- require("fzf-lua").resume()
+          require("telescope.builtin").resume()
         end,
         desc = "Last Float Window",
       },
       {
         ";e",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.diagnostics()
+          -- require("fzf-lua").diagnostics_workspace()
+          require("telescope.builtin").diagnostics()
         end,
         desc = "Workspace Diagnostics",
       },
       {
         ";s",
         function()
-          local builtin = require("telescope.builtin")
-          builtin.treesitter()
+          require("telescope.builtin").treesitter()
         end,
         desc = "Treesitter Symbols",
       },
@@ -167,7 +169,7 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
-  { "folke/flash.nvim", enabled = false },
+  -- { "folke/flash.nvim", enabled = false },
   {
     "chrisgrieser/nvim-spider",
     lazy = true,
