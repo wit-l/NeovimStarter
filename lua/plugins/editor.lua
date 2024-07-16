@@ -169,7 +169,16 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
-  -- { "folke/flash.nvim", enabled = false },
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        char = {
+          keys = { "f", "F", "," },
+        },
+      },
+    },
+  },
   {
     "chrisgrieser/nvim-spider",
     lazy = true,
