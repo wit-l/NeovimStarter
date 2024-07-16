@@ -52,5 +52,19 @@ end, { desc = "Terminal (cwd Dir)" })
 keymap.set("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 
 -- Jump next/prev word in InsertMode
-vim.keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i")
-vim.keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i")
+keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i")
+keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i")
+-- 取消.按键绑定
+keymap.set("n", ".", "<Nop>", opts)
+
+keymap.set("n", ";i", function()
+  require("dap").step_into()
+end, { desc = "Step Into" })
+
+keymap.set("n", ";o", function()
+  require("dap").step_out()
+end, { desc = "Step Out" })
+
+keymap.set("n", ";l", function()
+  require("dap").step_over()
+end, { desc = "Step Over" })
