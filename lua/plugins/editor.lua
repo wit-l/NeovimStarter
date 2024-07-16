@@ -167,7 +167,16 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
-  { "folke/flash.nvim", enabled = false },
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        char = {
+          keys = { "f", "F", "," },
+        },
+      },
+    },
+  },
   {
     "chrisgrieser/nvim-spider",
     lazy = true,
@@ -203,7 +212,7 @@ return {
     },
     lazy = true,
     event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-    branch = "regexp", -- This is the regexp branch, use this for the new version
+    branch = "regexp",  -- This is the regexp branch, use this for the new version
     config = function()
       require("venv-selector").setup({
         settings = {
