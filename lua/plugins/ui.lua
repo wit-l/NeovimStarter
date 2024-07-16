@@ -27,7 +27,7 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      timeout = 5000,
+      timeout = 1500,
     },
   },
 
@@ -58,7 +58,6 @@ return {
       },
     },
   },
-
   -- lazygit
   {
     "kdheepak/lazygit.nvim",
@@ -80,7 +79,6 @@ return {
   {
     "echasnovski/mini.hipatterns",
     event = "BufReadPre",
-    opts = {},
   },
 
   -- filename
