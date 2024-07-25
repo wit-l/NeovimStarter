@@ -14,6 +14,7 @@ The display images are as follows:
 ![nvim float window](pic/nvim-float-window.png)
 ![nvim term](pic/nvim-term.png)
 ![nvim database](pic/nvim-database.png)
+![debug cpp](pic/debug.png)
 
 My Terminal is [WindowsTerminal(preview)](https://github.com/microsoft/terminal).
 

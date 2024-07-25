@@ -14,6 +14,7 @@
 ![nvim float window](pic/nvim-float-window.png)
 ![nvim term](pic/nvim-term.png)
 ![nvim database](pic/nvim-database.png)
+![debug cpp](pic/debug.png)
 
 演示所用终端为[Windows Terminal(preview)](https://github.com/microsoft/terminal)
 
