@@ -1,14 +1,15 @@
 # NeovimStarter
 
-my neovim config(Applicable to linux platform, please refer to windows branch for windows platform.)
+My neovim config(Applicable to linux platform, please refer to windows branch for windows platform.)
 
 Part of the configuration reference:[Effective NeoVim Setup for 2024.pdf](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/pdf/Effective%20NeoVim%20Setup%20for%202024.pdf)
 
 forked from [LazyVim](https://github.com/LazyVim/starter.git)
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+
 **Pay attention to replace the url of lazyvim with the url of this repository when cloning.**
 
-The display images are as follows
+UI interface:
 ![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-neotree.png)
 ![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-1.png)
 ![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)

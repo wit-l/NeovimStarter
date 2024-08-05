@@ -3,11 +3,14 @@
 我的neovim配置文件(适用于Linux平台，windows平台请参考windows分支)
 
 部分配置参考：[Effective NeoVim Setup for 2024.pdf](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/pdf/Effective%20NeoVim%20Setup%20for%202024.pdf)
+
 根据[LazyVim](https://github.com/LazyVim/starter.git)修改而来
+
 安装步骤参考[documentation](https://lazyvim.github.io/installation)
+
 **注意克隆时将lazyvim的url替换为本仓库的url**
 
-展示图：
+UI界面：
 ![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-neotree.png)
 ![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-1.png)
 ![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
