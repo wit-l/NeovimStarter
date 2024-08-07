@@ -27,6 +27,7 @@ return {
         "scss",
         "sql",
         "regex",
+        "latex",
       },
     },
     config = function(_, opts)
