@@ -12,6 +12,7 @@ return {
         "tsx",
         "typescript",
         "yaml",
+        "toml",
         "astro",
         "cmake",
         "cpp",
@@ -26,7 +27,9 @@ return {
         "rust",
         "scss",
         "sql",
+        "graphql",
         "regex",
+        "latex",
       },
     },
     config = function(_, opts)
