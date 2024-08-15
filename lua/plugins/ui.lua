@@ -56,6 +56,9 @@ return {
       options = {
         theme = "catppuccin",
       },
+      sections = {
+        lualine_z = { "filesize", "encoding" },
+      },
     },
   },
   -- lazygit
