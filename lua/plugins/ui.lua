@@ -152,6 +152,23 @@ return {
     end,
   },
 
+  {
+    "ibhagwan/fzf-lua",
+    config = function()
+      require("fzf-lua").setup({
+        previewers = {
+          builtin = {
+            extensions = {
+              ["jpg"] = { "chafa", "{file}" },
+              ["svg"] = { "chafa", "{file}" },
+              ["png"] = { "chafa", "{file}" },
+            },
+          },
+        },
+      })
+    end,
+  },
+
   -- logo
   {
     "nvimdev/dashboard-nvim",
