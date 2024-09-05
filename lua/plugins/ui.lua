@@ -155,14 +155,17 @@ return {
   {
     "ibhagwan/fzf-lua",
     config = function()
+      local preview_cmd_chafa = { "chafa", "{file}" }
+      -- local preview_cmd_viu = { "viu", "-b" }
+      -- local preview_cmd_ueberzug = { "ueberzug" }
+      local image_extensions = {}
+      for _, ext in ipairs({ "jpg", "svg", "png", "ico" }) do
+        image_extensions[ext] = preview_cmd_chafa
+      end
       require("fzf-lua").setup({
         previewers = {
           builtin = {
-            extensions = {
-              ["jpg"] = { "chafa", "{file}" },
-              ["svg"] = { "chafa", "{file}" },
-              ["png"] = { "chafa", "{file}" },
-            },
+            extensions = image_extensions,
           },
         },
       })
