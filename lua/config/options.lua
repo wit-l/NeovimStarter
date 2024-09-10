@@ -7,8 +7,8 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.opt.cmdheight = 0
-vim.opt.laststatus = 2
-vim.opt.scrolloff = 10
+vim.opt.laststatus = 3
+vim.opt.scrolloff = 4
 vim.opt.splitkeep = "cursor"
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
