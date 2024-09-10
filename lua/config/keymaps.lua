@@ -11,18 +11,8 @@ keymap.set("n", "o", "o<Esc>")
 -- Switch to normal mode
 keymap.set({ "i", "c" }, "jf", "<Esc>")
 
--- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
-
--- Delete a word backwards
--- keymap.set("n", "dw", "vb_d")
-
 -- Select all
 keymap.set("n", "<C-a>", "ggVG")
-
--- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
 
 --New tab
 keymap.set("n", "te", ":tabedit", opts)
