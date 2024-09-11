@@ -3,17 +3,17 @@ return {
     "vhyrro/luarocks.nvim",
     priority = 1000,
     config = true,
+    lazy = true,
     opts = {
       rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
     },
   },
   {
     "rest-nvim/rest.nvim",
+    lazy = true,
     ft = "http",
+    event = "BufEnter *.http",
     dependencies = { "luarocks.nvim" },
-    config = function()
-      vim.g.rest_nvim = {}
-    end,
     keys = {
       {
         "\\r",
