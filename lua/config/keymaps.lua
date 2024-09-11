@@ -11,9 +11,6 @@ keymap.set("n", "o", "o<Esc>")
 -- Switch to normal mode
 keymap.set({ "i", "c" }, "jf", "<Esc>")
 
--- Select all
-keymap.set("n", "<C-a>", "ggVG")
-
 --New tab
 keymap.set("n", "te", ":tabedit", opts)
 keymap.set("n", "<tab>", ":tabnext<CR>", opts)
