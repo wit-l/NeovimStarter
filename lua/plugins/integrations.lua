@@ -4,18 +4,17 @@ return {
     enabled = false,
     priority = 1000,
     config = true,
+    lazy = true,
     opts = {
       rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
     },
   },
   {
     "rest-nvim/rest.nvim",
-    enabled = false,
+    lazy = true,
     ft = "http",
+    event = "BufEnter *.http",
     dependencies = { "luarocks.nvim" },
-    config = function()
-      require("rest-nvim").setup()
-    end,
     keys = {
       {
         "\\r",
