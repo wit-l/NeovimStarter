@@ -13,6 +13,7 @@ return {
     "rest-nvim/rest.nvim",
     lazy = true,
     ft = "http",
+    enabled = false,
     event = "BufEnter *.http",
     dependencies = { "luarocks.nvim" },
     keys = {

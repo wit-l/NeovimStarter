@@ -1,12 +1,14 @@
 return {
   {
     "telescope.nvim",
+    branch = "0.1.x",
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
       },
       "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-lua/plenary.nvim",
     },
     keys = {
       {
@@ -208,11 +210,11 @@ return {
       "neovim/nvim-lspconfig",
       "mfussenegger/nvim-dap",
       "mfussenegger/nvim-dap-python", --optional
-      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+      { "nvim-telescope/telescope.nvim" },
     },
     lazy = true,
-    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-    branch = "regexp",  -- This is the regexp branch, use this for the new version
+    event = "BufEnter *.py", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    branch = "regexp", -- This is the regexp branch, use this for the new version
     config = function()
       require("venv-selector").setup({
         settings = {
