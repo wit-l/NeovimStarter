@@ -5,8 +5,15 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Insert a line up/down in normal mode
-keymap.set("n", "O", "O<Esc>")
-keymap.set("n", "o", "o<Esc>")
+keymap.set("n", "O", "O<Esc>", opts)
+keymap.set("n", "o", "o<Esc>", opts)
+-- Insert one line below in insert mode without break current line)
+keymap.set(
+  "i",
+  "<C-j>",
+  "<Esc>A<CR>",
+  vim.tbl_extend("force", opts, { desc = "Insert new line below from anywhere in line" })
+)
 
 -- Switch to normal mode
 keymap.set({ "i", "c" }, "jf", "<Esc>")
@@ -21,10 +28,10 @@ keymap.set("n", "ss", ":split<CR>", opts)
 keymap.set("n", "sv", ":vsplit<CR>", opts)
 
 -- Move window
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sl", "<C-w>l")
+keymap.set("n", "sj", "<C-w>j", opts)
+keymap.set("n", "sk", "<C-w>k", opts)
+keymap.set("n", "sh", "<C-w>h", opts)
+keymap.set("n", "sl", "<C-w>l", opts)
 
 -- Resize window
 keymap.set("n", "<C-w><left>", "<C-w><", opts)
@@ -35,23 +42,23 @@ keymap.set("n", "<C-w><down>", "<C-w>-", opts)
 -- Open/Close Terminal
 keymap.set("n", "<c-\\>", function()
   LazyVim.terminal()
-end, { desc = "Terminal (cwd Dir)" })
-keymap.set("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+end, vim.tbl_extend("force", opts, { desc = "Terminal (cwd Dir)" }))
+keymap.set("t", "<C-\\>", "<cmd>close<cr>", vim.tbl_extend("force", opts, { desc = "Hide Terminal" }))
 
 -- Jump next/prev word in InsertMode
-keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i")
-keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i")
+keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i", opts)
+keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i", opts)
 -- 取消.按键绑定
 keymap.set("n", ".", "<Nop>", opts)
 
 keymap.set("n", ";i", function()
   require("dap").step_into()
-end, { desc = "Step Into" })
+end, vim.tbl_extend("force", opts, { desc = "Step Into" }))
 
 keymap.set("n", ";o", function()
   require("dap").step_out()
-end, { desc = "Step Out" })
+end, vim.tbl_extend("force", opts, { desc = "Step Out" }))
 
 keymap.set("n", ";l", function()
   require("dap").step_over()
-end, { desc = "Step Over" })
+end, vim.tbl_extend("force", opts, { desc = "Step Over" }))
