@@ -57,7 +57,7 @@ return {
         theme = "catppuccin",
       },
       sections = {
-        lualine_z = { "encoding", "filesize", "filename" },
+        lualine_z = { "fileformat", "encoding", "filesize", "filename" },
       },
     },
   },
