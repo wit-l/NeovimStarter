@@ -52,14 +52,11 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
-    opts = {
-      options = {
-        theme = "catppuccin",
-      },
-      sections = {
-        lualine_z = { "fileformat", "encoding", "filesize" },
-      },
-    },
+    opts = function(_, opts)
+      opts.options = { theme = "catppuccin" }
+      opts.sections.lualine_c = vim.tbl_extend("force", opts.sections.lualine_c, { "fileformat" })
+      opts.sections.lualine_z = { "encoding", "filesize" }
+    end,
   },
   -- lazygit
   {
