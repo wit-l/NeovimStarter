@@ -54,7 +54,7 @@ return {
     event = "VeryLazy",
     opts = function(_, opts)
       opts.options = { theme = "catppuccin" }
-      opts.sections.lualine_c = vim.tbl_extend("force", opts.sections.lualine_c, { "fileformat" })
+      table.insert(opts.sections.lualine_x, "fileformat")
       opts.sections.lualine_z = { "encoding", "filesize" }
     end,
   },
