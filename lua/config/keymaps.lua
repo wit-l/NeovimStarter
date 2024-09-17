@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>k", function()
   local line = vim.fn.getline(".")
   local url = line:match("https?://[%w-_%.%?%.:/%+=&]+") or word
   if url then
-    vim.fn.system("cmd /c start " .. url)
+    os.execute("cmd.exe /c start " .. url)
   else
     vim.lsp.buf.hover() -- 如果没有找到 URL，回退到 LSP 悬浮窗口
   end
