@@ -16,7 +16,7 @@ keymap.set(
   vim.tbl_extend("force", opts, { desc = "Insert new line below from anywhere in line" })
 )
 
--- Replace the default action for Ctrl+k
+-- Add the default action for <leader>+k to open the URL in win host's default browser(for wsl2)
 vim.keymap.set("n", "<leader>k", function()
   -- Get the word under the cursor (which could be a URL or keyword)
   local word = vim.fn.expand("<cWORD>")
@@ -24,11 +24,12 @@ vim.keymap.set("n", "<leader>k", function()
   local line = vim.fn.getline(".")
   local url = line:match("https?://[%w-_%.%?%.:/%+=&]+") or word
   if url then
+    -- Invoke cmd is faster than wslview command to open win host's browser
     vim.fn.system("/mnt/c/Windows/System32/cmd.exe /c start " .. url)
   else
     vim.lsp.buf.hover() -- 如果没有找到 URL，回退到 LSP 悬浮窗口
   end
-end, vim.tbl_extend("force", opts, { desc = "Open a URL in the win host's default browser" }))
+end, vim.tbl_extend("force", opts, { desc = "Open the URL in win host" }))
 
 -- Switch to normal mode
 keymap.set({ "i", "c" }, "jf", "<Esc>")
