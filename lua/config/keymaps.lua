@@ -7,6 +7,7 @@ local opts = { noremap = true, silent = true }
 -- Insert a line up/down in normal mode
 keymap.set("n", "O", "O<Esc>", opts)
 keymap.set("n", "o", "o<Esc>", opts)
+
 -- Insert one line below in insert mode without break current line)
 keymap.set(
   "i",
@@ -14,6 +15,20 @@ keymap.set(
   "<Esc>A<CR>",
   vim.tbl_extend("force", opts, { desc = "Insert new line below from anywhere in line" })
 )
+
+-- Replace the default action for Ctrl+k
+vim.keymap.set("n", "<leader>k", function()
+  -- Get the word under the cursor (which could be a URL or keyword)
+  local word = vim.fn.expand("<cWORD>")
+  -- 如果光标下不是 URL，可以尝试获取整个行并查找 URL
+  local line = vim.fn.getline(".")
+  local url = line:match("https?://[%w-_%.%?%.:/%+=&]+") or word
+  if url then
+    vim.fn.system("/mnt/c/Windows/System32/cmd.exe /c start " .. url)
+  else
+    vim.lsp.buf.hover() -- 如果没有找到 URL，回退到 LSP 悬浮窗口
+  end
+end, vim.tbl_extend("force", opts, { desc = "Open a URL in the win host's default browser" }))
 
 -- Switch to normal mode
 keymap.set({ "i", "c" }, "jf", "<Esc>")
