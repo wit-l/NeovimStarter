@@ -11,12 +11,20 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to **get st
 **Pay attention to replace the url of lazyvim with the url of this repository when cloning.**
 
 UI interface:
-![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-neotree.png)
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-1.png)
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-3.png)
-![nvim float window](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-float-window.png)
-![nvim term](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-term.png)
+
+<kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd> Open neo-tree file manager
+![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267348327991726734782487.png)
+<kbd>shift</kbd>+<kbd>k</kbd> Show var info under the cursor，Use it (or <kbd>space</kbd>+<kbd>k</kbd>) to open a URL under the cursor with the default browser.
+![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267351508081726735150586.png)
+<kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd> Rename a variable
+![nvim rename](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
+<kbd>;</kbd>+<kbd>f</kbd> Search and Preview files (arrange：current workspace, UI：telescope)
+![find files with telescope](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-float-window.png)
+<kbd>space</kbd>+<kbd>f</kbd>+<kbd>f</kbd> Same as above, but the preview range is larger with line numbers.(UI：fzf-lua)
+![find files with fzf-lua](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267376298081726737607064.png)
+<kbd>Ctrl</kbd>+<kbd>\\</kbd>or<kbd>/</kbd> Open / Close the terminal
+![nvim term](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267372197991726737219265.png)
+<kbd>space</kbd>+<kbd>D</kbd>
 ![nvim database](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-database.png)
 ![debug cpp](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/debug.png)
 

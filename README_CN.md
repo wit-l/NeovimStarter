@@ -10,12 +10,20 @@
 **注意克隆时将lazyvim的url替换为本仓库的url**
 
 UI界面：
-![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-neotree.png)
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-1.png)
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-3.png)
-![nvim float window](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-float-window.png)
-![nvim term](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-term.png)
+
+<kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd>打开neo-tree文件管理器
+![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267348327991726734782487.png)
+<kbd>shift</kbd>+<kbd>k</kbd>查看光标所在变量的提示信息，可通过该快捷键(或<kbd>space</kbd>+<kbd>k</kbd>)打开浏览器访问光标下的URL
+![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267351508081726735150586.png)
+<kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd>对变量重命名(需要lsp支持，将对整个项目范围有效)
+![nvim rename](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
+<kbd>;</kbd>+<kbd>f</kbd>搜索并预览文件（范围：current workspace, UI提供：telescope）
+![find files with telescope](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-float-window.png)
+<kbd>space</kbd>+<kbd>f</kbd>+<kbd>f</kbd>同上，但预览范围更大且带行号（UI提供：fzf-lua）
+![find files with fzf-lua](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267376298081726737607064.png)
+<kbd>Ctrl</kbd>+<kbd>\\</kbd>or<kbd>/</kbd>打开/关闭终端
+![nvim term](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267372197991726737219265.png)
+<kbd>space</kbd>+<kbd>D</kbd>
 ![nvim database](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-database.png)
 ![debug cpp](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/debug.png)
 
