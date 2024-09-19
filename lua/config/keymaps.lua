@@ -22,7 +22,7 @@ vim.keymap.set("n", "<leader>k", function()
   local word = vim.fn.expand("<cWORD>")
   -- 如果光标下不是 URL，可以尝试获取整个行并查找 URL
   local line = vim.fn.getline(".")
-  local url = line:match("https?://[%w-_%.%?%.:/%+=&]+") or word
+  local url = line:match("https?://[%w-_%.%?%.:/%+=&@]+") or word
   if url then
     os.execute("cmd.exe /c start " .. url)
   else
