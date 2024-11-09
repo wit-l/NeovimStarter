@@ -24,3 +24,4 @@ if contains_c_users then
   shell = "pwsh"
 end
 vim.opt.shell = shell
+-- vim.g.mkdp_port = "8000"
