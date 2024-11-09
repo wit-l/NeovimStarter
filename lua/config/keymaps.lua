@@ -56,7 +56,7 @@ keymap.set("n", "<C-w><down>", "<C-w>-", opts)
 
 -- Open/Close Terminal
 keymap.set("n", "<c-\\>", function()
-  LazyVim.terminal()
+  Snacks.terminal()
 end, vim.tbl_extend("force", opts, { desc = "Terminal (cwd Dir)" }))
 keymap.set("t", "<C-\\>", "<cmd>close<cr>", vim.tbl_extend("force", opts, { desc = "Hide Terminal" }))
 
