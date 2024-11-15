@@ -16,8 +16,8 @@ keymap.set(
   vim.tbl_extend("force", opts, { desc = "Insert new line below from anywhere in line" })
 )
 
--- Add the default action for <leader>+k to open the URL with default browser
-vim.keymap.set("n", "<leader>k", function()
+-- Add the default action for <leader>+k to open the URL in win host's default browser(for wsl2)
+keymap.set("n", "<leader>k", function()
   -- Get the word under the cursor (which could be a URL or keyword)
   local word = vim.fn.expand("<cWORD>")
   -- 如果光标下不是 URL，可以尝试获取整个行并查找 URL
