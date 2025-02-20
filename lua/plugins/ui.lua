@@ -131,18 +131,6 @@ return {
       },
     },
   },
-
-  -- animations
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.scroll = {
-        enable = false,
-      }
-    end,
-  },
-
   {
     "ibhagwan/fzf-lua",
     config = function()
