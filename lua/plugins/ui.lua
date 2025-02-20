@@ -20,14 +20,6 @@ return {
         },
         opts = { skip = true },
       })
-      table.insert(opts.routes, {
-        filter = {
-          event = "notify",
-          find = "position_encoding param is required",
-        },
-        opts = { skip = true },
-      })
-
       opts.presets.lsp_doc_border = true
     end,
   },
