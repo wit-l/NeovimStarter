@@ -163,7 +163,21 @@ return {
       indent = { enabled = true },
       input = { enabled = true },
       scroll = { enabled = true },
-      dashboard = { enabled = true },
+      dashboard = {
+        sections = {
+          {
+            section = "terminal",
+            cmd = "chafa C:\\Users\\witty\\Pictures\\t1.png --format symbols --symbols vhalf --size 60x20 --stretch; sleep .1",
+            height = 20,
+            padding = 1,
+          },
+          {
+            pane = 2,
+            { section = "keys", gap = 1, padding = 1 },
+            { section = "startup" },
+          },
+        },
+      },
     },
   },
   -- dashboard
