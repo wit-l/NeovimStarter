@@ -51,24 +51,6 @@ return {
       opts.sections.lualine_z = { "encoding", "filesize" }
     end,
   },
-  -- lazygit
-  {
-    "kdheepak/lazygit.nvim",
-    keys = {
-      {
-        ";c",
-        ":LazyGit<Return>",
-        silent = true,
-        noremap = true,
-        desc = "lazygit",
-      },
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-  },
-
 
   -- filename
   {
@@ -182,6 +164,15 @@ return {
             builtin = false,
           },
         },
+      },
+    },
+    keys = {
+      {
+        "<leader>gz",
+        function()
+          Snacks.lazygit.open()
+        end,
+        desc = "Lazygit",
       },
     },
   },
