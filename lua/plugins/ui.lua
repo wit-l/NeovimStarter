@@ -133,7 +133,10 @@ return {
     lazy = false,
     opts = {
       bigfile = { enabled = true },
-      notifier = { enabled = true },
+      notifier = {
+        enabled = true,
+        timeout = 3000,
+      },
       quickfile = { enabled = true },
       statuscolumn = { enabled = true },
       words = { enabled = true },
