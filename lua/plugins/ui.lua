@@ -70,10 +70,6 @@ return {
     },
   },
 
-  {
-    "echasnovski/mini.hipatterns",
-    event = "BufReadPre",
-  },
 
   -- filename
   {
