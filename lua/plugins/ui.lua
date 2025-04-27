@@ -84,30 +84,30 @@ return {
   },
 
   -- database
-  {
-    "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      { "tpope/vim-dadbod", lazy = true },
-      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-    },
-    cmd = {
-      "DBUI",
-      "DBUIToggle",
-      "DBUIAddConnection",
-      "DBUIFindBuffer",
-    },
-    init = function()
-      -- Your DBUI configuration
-      vim.g.db_ui_use_nerd_fonts = 1
-    end,
-    keys = {
-      {
-        "<leader>d",
-        "<cmd>Neotree<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>",
-        desc = "DataBaseUI",
-      },
-    },
-  },
+  -- {
+  --   "kristijanhusak/vim-dadbod-ui",
+  --   dependencies = {
+  --     { "tpope/vim-dadbod", lazy = true },
+  --     { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+  --   },
+  --   cmd = {
+  --     "DBUI",
+  --     "DBUIToggle",
+  --     "DBUIAddConnection",
+  --     "DBUIFindBuffer",
+  --   },
+  --   init = function()
+  --     -- Your DBUI configuration
+  --     vim.g.db_ui_use_nerd_fonts = 1
+  --   end,
+  --   keys = {
+  --     {
+  --       "<leader>d",
+  --       "<cmd>Neotree<cr><cmd>tabnew<cr><bar><bar><cmd>DBUI<cr>",
+  --       desc = "DataBaseUI",
+  --     },
+  --   },
+  -- },
   {
     "ibhagwan/fzf-lua",
     config = function()
@@ -168,6 +168,34 @@ return {
         desc = "Lazygit",
       },
     },
+  },
+  {
+    "hiphish/rainbow-delimiters.nvim", -- Powered by Tree-sitter
+    submodules = false,
+    opts = {
+      strategy = {
+        [""] = "rainbow-delimiters.strategy.global",
+        vim = "rainbow-delimiters.strategy.local",
+      },
+      query = {
+        [""] = "rainbow-delimiters",
+        lua = "rainbow-blocks",
+      },
+      priority = {
+        [""] = 110,
+        lua = 210,
+      },
+      highlight = {
+        "RainbowDelimiterRed",
+        "RainbowDelimiterYellow",
+        "RainbowDelimiterBlue",
+        "RainbowDelimiterOrange",
+        "RainbowDelimiterGreen",
+        "RainbowDelimiterViolet",
+        "RainbowDelimiterCyan",
+      },
+    },
+    main = "rainbow-delimiters.setup",
   },
   -- dashboard
   -- {
