@@ -40,8 +40,8 @@ keymap.set("n", "<tab>", ":tabnext<CR>", opts)
 keymap.set("n", "<S-tab>", ":tabprev<CR>", opts)
 
 -- Split window
-keymap.set("n", "ss", ":split<CR>", opts)
-keymap.set("n", "sv", ":vsplit<CR>", opts)
+-- keymap.set("n", "ss", ":split<CR>", opts)
+-- keymap.set("n", "sv", ":vsplit<CR>", opts)
 
 -- Move window
 keymap.set("n", "sj", "<C-w>j", opts)
