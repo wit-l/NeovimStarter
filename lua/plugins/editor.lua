@@ -207,49 +207,6 @@ return {
     },
   },
   {
-    "linux-cultist/venv-selector.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "mfussenegger/nvim-dap",
-      "mfussenegger/nvim-dap-python", --optional
-      "nvim-telescope/telescope.nvim",
-    },
-    lazy = true,
-    event = "BufEnter *.py", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-    branch = "regexp", -- This is the regexp branch, use this for the new version
-    opts = {
-      settings = {
-        options = {
-          enable_default_searches = true,
-          enabled_cached_venvs = true,
-          show_telescope_search_type = true,
-          notify_user_on_venv_activation = true,
-          set_environment_variables = true,
-        },
-        search = {
-          anaconda_base = {
-            command = "fd /python$ /opt/anaconda3/bin --full-path --color never -E /proc",
-            type = "anaconda",
-          },
-          anaconda_envs = {
-            command = "fd /python$ /opt/anaconda3/envs --full-path --color never -E /proc",
-            type = "anaconda",
-          },
-          cwd = {
-            command = "fd '/bin/python$' $CWD --full-path --color never -E /proc -I -a -L",
-          },
-          python = {
-            command = "fd /python3$ /bin -p --color never -d 1",
-          },
-        },
-      },
-    },
-    keys = {
-      -- Keymap to open VenvSelector to pick a venv.
-      { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select Python Venv" },
-    },
-  },
-  {
     "mg979/vim-visual-multi",
     branch = "master",
   },
