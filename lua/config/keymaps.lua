@@ -19,7 +19,7 @@ keymap.set(
 -- Add the default action for <leader>+k to open the URL in win host's default browser(for wsl2)
 keymap.set("n", "<leader>k", function()
   -- Get the word under the cursor (which could be a URL or keyword)
-  local word = vim.fn.expand("<cWORD>")
+  local word = vim.fn.expand("<cfile>")
   -- 如果光标下不是 URL，可以尝试获取整个行并查找 URL
   local line = vim.fn.getline(".")
   local url = line:match("https?://[%w-_%.%?%.:/%+=&@%%]+") or word
