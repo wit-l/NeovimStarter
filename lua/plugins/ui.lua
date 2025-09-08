@@ -31,6 +31,12 @@ return {
       { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
+    init = function()
+      local bufline = require("catppuccin.groups.integrations.bufferline")
+      function bufline.get()
+        return bufline.get_theme()
+      end
+    end,
     opts = {
       options = {
         mode = "tabs",
