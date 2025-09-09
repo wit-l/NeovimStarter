@@ -21,6 +21,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
+  ui = {
+    border = "rounded",
+    title = "Lazy Control Panel",
+  },
   spec = {
     -- add LazyVim and import its plugins
     {
@@ -55,7 +59,7 @@ require("lazy").setup({
         "gzip",
         -- "matchit",
         -- "matchparen",
-        -- "netrwPlugin",
+        "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
