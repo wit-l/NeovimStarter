@@ -28,6 +28,8 @@ return {
   -- bufferline
   {
     "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
     keys = {
       { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
@@ -186,6 +188,9 @@ return {
           diff = {
             builtin = false,
             cmd = "delta",
+          },
+          git = {
+            builtin = false,
           },
         },
       },
