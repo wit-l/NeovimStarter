@@ -14,6 +14,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
+  ui = {
+    border = "rounded",
+    title = "Lazy Control Panel",
+  },
   spec = {
     -- add LazyVim and import its plugins
     {
