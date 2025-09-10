@@ -263,7 +263,7 @@ return {
       vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
       vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
       vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
-      vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#3b3f52" })
+      -- vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#3b3f52" })
     end,
   },
 }
