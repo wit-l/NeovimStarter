@@ -227,7 +227,6 @@ return {
   {
     "saghen/blink.cmp",
     opts = function(_, opts)
-      -- 安全地合并边框配置到默认配置中
       opts.completion = vim.tbl_deep_extend("force", opts.completion or {}, {
         menu = { border = "rounded" },
         documentation = { window = { border = "rounded" } },
