@@ -17,6 +17,7 @@ require("lazy").setup({
   ui = {
     border = "rounded",
     title = "Lazy Control Panel",
+    backdrop = 100, -- The backdrop opacity
   },
   spec = {
     -- add LazyVim and import its plugins
