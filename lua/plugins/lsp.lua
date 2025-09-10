@@ -16,6 +16,8 @@ return {
         "pyright",
       })
       opts.ui = {
+        border = "rounded",
+        backdrop = 100, -- The backdrop opacity
         icons = {
           package_installed = "✓",
           package_pending = "➜",
