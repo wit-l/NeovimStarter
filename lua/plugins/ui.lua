@@ -251,6 +251,12 @@ return {
         documentation = { window = { border = "rounded" } },
       })
       opts.signature = { window = { border = "rounded" } }
+      -- 设置补全菜单浮动窗口的背景透明
+      -- 对于 Pmenu (补全菜单) 相关的高亮组，也可以尝试设置
+      vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
+      vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
+      vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
+      vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#3b3f52" })
     end,
   },
 }
