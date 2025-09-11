@@ -35,9 +35,7 @@ return {
     },
     init = function()
       local bufline = require("catppuccin.groups.integrations.bufferline")
-      function bufline.get()
-        return bufline.get_theme()
-      end
+      bufline.get = bufline.get_theme
     end,
     opts = {
       options = {
