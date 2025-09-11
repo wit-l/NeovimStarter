@@ -8,7 +8,6 @@ return {
     },
     lazy = true,
     event = "BufReadPre",
-    priority = 1000,
   },
   {
     "folke/noice.nvim",
