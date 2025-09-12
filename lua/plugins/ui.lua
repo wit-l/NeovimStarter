@@ -172,15 +172,6 @@ return {
         },
       },
     },
-    keys = {
-      {
-        "<leader>gz",
-        function()
-          Snacks.lazygit.open()
-        end,
-        desc = "Lazygit",
-      },
-    },
   },
   {
     "hiphish/rainbow-delimiters.nvim", -- Powered by Tree-sitter
