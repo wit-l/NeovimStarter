@@ -144,10 +144,7 @@ return {
           git_hl = true, -- use Git Signs hl for fold icons
         },
       },
-      words = { enabled = true },
       indent = { enabled = true },
-      input = { enabled = true },
-      scroll = { enabled = true },
       dashboard = {
         sections = {
           {
