@@ -157,10 +157,12 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-      bigfile = { enabled = true },
-      notifier = { enabled = true },
-      quickfile = { enabled = true },
-      statuscolumn = { enabled = true },
+      statuscolumn = {
+        folds = {
+          open = true, -- show open fold icons
+          git_hl = true, -- use Git Signs hl for fold icons
+        },
+      },
       words = { enabled = true },
       indent = { enabled = true },
       input = { enabled = true },
