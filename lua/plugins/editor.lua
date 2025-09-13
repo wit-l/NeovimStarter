@@ -173,16 +173,6 @@ return {
     end,
   },
   {
-    "folke/flash.nvim",
-    -- opts = {
-    --   modes = {
-    --     char = {
-    --       keys = { "f", "F", "," },
-    --     },
-    --   },
-    -- },
-  },
-  {
     "chrisgrieser/nvim-spider",
     lazy = true,
     keys = {
