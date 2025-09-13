@@ -24,7 +24,7 @@ return {
         desc = "Find Plugin File",
       },
       {
-        ";f",
+        ".f",
         function()
           require("fzf-lua").files()
           -- require("telescope.builtin").find_files({
@@ -35,7 +35,7 @@ return {
         desc = "Find Files(cwd)",
       },
       {
-        ";r",
+        ".r",
         function()
           require("fzf-lua").oldfiles()
           -- require("telescope.builtin").oldfiles()
@@ -43,7 +43,7 @@ return {
         desc = "Recent Files",
       },
       {
-        ";g",
+        ".g",
         function()
           require("fzf-lua").live_grep()
           -- require("telescope.builtin").live_grep()
@@ -51,7 +51,7 @@ return {
         desc = "Grep(cwd)",
       },
       {
-        ";b",
+        ".b",
         function()
           require("fzf-lua").buffers()
           -- require("telescope.builtin").buffers()
@@ -59,7 +59,7 @@ return {
         desc = "Buffers",
       },
       {
-        ";t",
+        ".t",
         function()
           require("fzf-lua").helptags()
           -- require("telescope.builtin").help_tags()
@@ -67,7 +67,7 @@ return {
         desc = "Help Pages",
       },
       {
-        ";;",
+        ".;",
         function()
           require("fzf-lua").resume()
           -- require("telescope.builtin").resume()
@@ -75,7 +75,7 @@ return {
         desc = "Last Float Window",
       },
       {
-        ";e",
+        ".d",
         function()
           require("fzf-lua").diagnostics_workspace()
           -- require("telescope.builtin").diagnostics()
@@ -83,7 +83,7 @@ return {
         desc = "Workspace Diagnostics",
       },
       {
-        ";s",
+        ".s",
         function()
           require("fzf-lua").treesitter()
           -- require("telescope.builtin").treesitter()

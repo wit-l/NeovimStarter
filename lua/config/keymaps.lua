@@ -57,14 +57,14 @@ keymap.set("t", "<C-\\>", "<cmd>close<cr>", vim.tbl_extend("force", opts, { desc
 keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i", opts)
 keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i", opts)
 
-keymap.set("n", ";i", function()
+keymap.set("n", ".i", function()
   require("dap").step_into()
 end, vim.tbl_extend("force", opts, { desc = "Step Into" }))
 
-keymap.set("n", ";o", function()
+keymap.set("n", ".o", function()
   require("dap").step_out()
 end, vim.tbl_extend("force", opts, { desc = "Step Out" }))
 
-keymap.set("n", ";l", function()
+keymap.set("n", ".l", function()
   require("dap").step_over()
 end, vim.tbl_extend("force", opts, { desc = "Step Over" }))
