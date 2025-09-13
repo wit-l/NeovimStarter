@@ -54,8 +54,7 @@ return {
   -- filename
   {
     "b0o/incline.nvim",
-    enabled = false,
-    dependencies = {},
+    -- enabled = false,
     event = "BufReadPre",
     priority = 1200,
     config = function()
