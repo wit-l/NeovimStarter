@@ -72,5 +72,3 @@ WT的配置文件在 [这里](https://github.com/WittyCo/Dotfiles/blob/main/wind
 - [Node](https://nodejs.org/) **必需**
 
   众多提供代码补全等高级功能的Lsp插件都使用npm安装
-
-本人使用anaconda管理python虚拟环境，在neovim上使用venv-selector插件来自动选择或切换python环境,**注意修改位于lua/plugins/editor.lua下的anaconda的路径（目前由于各平台python程序相对路径存在差异导致windows端该自动选择/切换python环境插件无法正常工作,类Unix平台无该问题）**
