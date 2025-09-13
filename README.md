@@ -69,5 +69,3 @@ Requirements:
 - [Node](https://nodejs.org/) **Required**
 
   Many plugins that provide advanced features such as code completion and refactoring are installed using npm.
-
-I use anaconda to manage python virtual environment, and neovim uses venv-selector plugin to switch python environment. **Pay attention to modifying anaconda path in lua/plugins/editor.lua**
