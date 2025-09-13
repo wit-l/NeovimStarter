@@ -1,12 +1,6 @@
 return {
   {
     "Bekaboo/dropbar.nvim",
-    -- optional, but required for fuzzy finder support
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      "xiyaowong/transparent.nvim",
-    },
-    lazy = true,
     event = "BufReadPre",
   },
   {
@@ -135,7 +129,6 @@ return {
   {
     "folke/snacks.nvim",
     priority = 1000,
-    lazy = false,
     ---@type snacks.Config
     opts = {
       statuscolumn = {
