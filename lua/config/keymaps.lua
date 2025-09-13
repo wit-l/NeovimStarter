@@ -30,17 +30,10 @@ keymap.set("n", "<leader>k", function()
   end
 end, vim.tbl_extend("force", opts, { desc = "Open a URL with default browser" }))
 
--- Switch to normal mode
-keymap.set({ "i", "c" }, "jf", "<Esc>")
-
 --New tab
 keymap.set("n", "te", ":tabedit", opts)
 keymap.set("n", "<tab>", ":tabnext<CR>", opts)
 keymap.set("n", "<S-tab>", ":tabprev<CR>", opts)
-
--- Split window
--- keymap.set("n", "ss", ":split<CR>", opts)
--- keymap.set("n", "sv", ":vsplit<CR>", opts)
 
 -- Move window
 keymap.set("n", "sj", "<C-w>j", opts)
@@ -63,8 +56,6 @@ keymap.set("t", "<C-\\>", "<cmd>close<cr>", vim.tbl_extend("force", opts, { desc
 -- Jump next/prev word in InsertMode
 keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i", opts)
 keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i", opts)
--- 取消.按键绑定
-keymap.set("n", ".", "<Nop>", opts)
 
 keymap.set("n", ";i", function()
   require("dap").step_into()
