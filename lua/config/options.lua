@@ -17,11 +17,5 @@ vim.opt.path:append({ "**" })
 vim.opt.wrap = false
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
-local home = os.getenv("HOME") or os.getenv("USERPROFILE") or ""
-local shell = "zsh"
-local contains_c_users = string.find(home, "C:\\Users") ~= nil
-if contains_c_users then
-  shell = "pwsh"
-end
-vim.opt.shell = shell
+vim.opt.shell = "pwsh"
 -- vim.g.mkdp_port = "8000"
