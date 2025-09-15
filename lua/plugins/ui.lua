@@ -131,7 +131,12 @@ return {
     priority = 1000,
     ---@type snacks.Config
     opts = {
+      image = {
+        enabled = true,
+      },
+      words = { enabled = true },
       statuscolumn = {
+        enabled = true,
         folds = {
           open = true, -- show open fold icons
           git_hl = true, -- use Git Signs hl for fold icons
