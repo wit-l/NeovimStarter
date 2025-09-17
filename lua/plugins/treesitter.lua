@@ -29,9 +29,7 @@ return {
         "regex",
       },
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
+    config = function()
       local highlight = {
         "RainbowRed",
         "RainbowYellow",
