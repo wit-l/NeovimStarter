@@ -200,4 +200,19 @@ return {
     "mg979/vim-visual-multi",
     branch = "master",
   },
+  {
+    "linux-cultist/venv-selector.nvim",
+    opts = {
+      search = {
+        miniconda_envs = {
+          command = "$FD 'bin/python$' ~/.config/conda/envs --no-ignore-vcs --full-path --color never",
+          type = "anaconda",
+        },
+        miniconda_base = {
+          command = "$FD '/python$' /opt/miniconda3/bin --no-ignore-vcs --full-path --color never",
+          type = "anaconda",
+        },
+      },
+    },
+  },
 }
