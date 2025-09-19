@@ -205,12 +205,15 @@ return {
     opts = {
       search = {
         miniconda_envs = {
-          command = "$FD 'bin/python$' ~/.config/conda/envs --no-ignore-vcs --full-path --color never",
+          command = "$FD python.exe$ D:/Software/miniconda3/envs --no-ignore-vcs --full-path -a -E Lib",
           type = "anaconda",
         },
         miniconda_base = {
-          command = "$FD '/python$' /opt/miniconda3/bin --no-ignore-vcs --full-path --color never",
+          command = "$FD miniconda3//python.exe$ D:/Software/miniconda3 --no-ignore-vcs --full-path -a --color never",
           type = "anaconda",
+        },
+        cwd = {
+          command = "$FD '/bin/python$' $CWD --full-path --color never -a -L -E /proc -E .git/ -E .wine/ -E .steam/ -E Steam/ -E site-packages/",
         },
       },
     },
