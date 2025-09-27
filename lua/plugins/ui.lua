@@ -237,5 +237,9 @@ return {
       vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
       vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
     end,
+    keymap = {
+      preset = "enter",
+      ["<CR>"] = { "select_and_accept" },
+    },
   },
 }
