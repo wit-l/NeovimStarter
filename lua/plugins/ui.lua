@@ -226,6 +226,10 @@ return {
           },
         },
         documentation = { window = { border = "rounded" } },
+        trigger = {
+          show_on_insert = true,
+          show_on_backspace = true,
+        },
       })
       -- 设置补全菜单浮动窗口的背景透明
       -- 对于 Pmenu (补全菜单) 相关的高亮组，也可以尝试设置
