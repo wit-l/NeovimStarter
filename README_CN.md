@@ -9,20 +9,42 @@
 安装步骤参考[documentation](https://lazyvim.github.io/installation)
 **注意克隆时将lazyvim的url替换为本仓库的url**
 
-UI界面：
+## UI界面
 
-<kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd>打开neo-tree文件管理器
-![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267348327991726734782487.png)
-<kbd>shift</kbd>+<kbd>k</kbd>查看光标所在变量的提示信息，可通过该快捷键(或<kbd>space</kbd>+<kbd>k</kbd>)打开浏览器访问光标下的URL
+### 文件管理器（snacks-explorer)
+
+打开文件管理器：<kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd>
+![nvim explorer](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590250453161759025045064.png)
+
+### 补全&提示文档（blink.cmp+lsp）
+
+查看光标处变量的提示信息：<kbd>shift</kbd>+<kbd>k</kbd>
+跳转浏览器访问光标下URL：<kbd>space</kbd>+<kbd>k</kbd>)。其中blink.cmp负责显示与窗口触发，数据来源为语言对应lsp。
 ![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267351508081726735150586.png)
-<kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd>对变量重命名(需要lsp支持，将对整个项目范围有效)
+【注：<kbd>space</kbd>+<kbd>k</kbd>根据wsl2环境配置，完整Linux系统需要更改 `./lua/config/keymaps.lua#L28` 处的命令, 或者直接删除`#L19-L32`，使用vim内置的<kbd>gx</kbd>跳转到浏览器中指定页面】
+
+### 重命名（lsp）
+
+变量重命名（对光标下的）：<kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd>(需要lsp支持，将对整个项目范围有效)
 ![nvim rename](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
-<kbd>;</kbd>+<kbd>f</kbd>搜索并预览文件（范围：current workspace, UI提供：telescope）
-![find files with telescope](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-float-window.png)
-<kbd>space</kbd>+<kbd>f</kbd>+<kbd>f</kbd>同上，但预览范围更大且带行号（UI提供：fzf-lua）
-![find files with fzf-lua](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267376298081726737607064.png)
-<kbd>Ctrl</kbd>+<kbd>\\</kbd>or<kbd>/</kbd>打开/关闭终端
-![nvim term](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267372197991726737219265.png)
+
+### 文件查找-根据文件/路径名（snacks-picker）
+
+搜索并预览文件：<kbd>space</kbd>+<kbd>f</kbd><kbd>f</kbd>
+![find files](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590253743121759025373411.png)
+
+### 文件查找-根据文件内容（snacks-picker）
+
+搜索并预览内容：<kbd>space</kbd>+<kbd>/</kbd>，回车直接跳转到指定行
+![find files](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590271943101759027193496.png)
+
+### Nvim 内置终端（snacks-terminal）
+
+打开/关闭终端：<kbd>Ctrl</kbd>+<kbd>\\</kbd>or<kbd>/</kbd>
+![nvim term](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590254603111759025460023.png)
+
+### Debug（vim-dadbod）
+
 <kbd>space</kbd>+<kbd>D</kbd>
 ![nvim database](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-database.png)
 ![debug cpp](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/debug.png)
@@ -33,7 +55,7 @@ WT的配置文件在 [这里](https://github.com/WittyCo/Dotfiles/blob/main/wind
 
 以上配置文件中规定的默认切换专注模式(WT无边框)快捷键为Alt+z.
 
-可选依赖:
+## 可选依赖
 
 - [gcc/g++](https://winlibs.com/) **编写c/cpp代码必需**
 
@@ -71,4 +93,10 @@ WT的配置文件在 [这里](https://github.com/WittyCo/Dotfiles/blob/main/wind
 - [Python](https://www.python.org/) **可选**
 - [Node](https://nodejs.org/) **必需**
 
-  众多提供代码补全等高级功能的Lsp插件都使用npm安装
+  众多提供代码补全等高级功能的Lsp插件都使用npm安装。
+
+## 默认已安装的环境
+
+默认安装的环境有"tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(html, css快捷语法插件), "pyright"(Python lsp), "clangd"(C/C++ lsp)。不需要的环境可以删除 `./lua/plugins/lsp.lua#L11-L17` 中对应的lsp。
+
+**注：venv-selector.nvim插件需要单独配置查询起始路径，若无python环境可删除 `./lua/plugins/editor.lua#L203-L217` 中的venv-selector部分配置，但是只要有配置python环境，LazyVim会自动安装该插件**
