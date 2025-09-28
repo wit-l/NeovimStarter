@@ -58,7 +58,7 @@ The config file of WT is [here](https://github.com/WittyCo/Dotfiles/blob/main/wi
 
 The default shortcut key for switching focus mode (WT without border) is ALT+Z in my wt config.
 
-Requirements:
+## Requirements
 
 - [gcc/g++](https://winlibs.com/) **Required for c/cpp code**
 
