@@ -97,6 +97,6 @@ Requirements:
 
 ## Default installed environment
 
-The default environment(lsp plugins) are "tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(for emmet.io), "pyright"(Python), "clangd"(C/C++). Unnecessary environment can delete the corresponding lsp in `./lua/plugins/lsp.lua#L11-L17`.
+The default environment(lsp plugins) are "tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(for emmet.io), "pyright"(Python), "clangd"(C/C++). For unnecessary environment, it can be uninstalled by deleting the corresponding lsp in `./lua/plugins/lsp.lua#L11-L17`.
 
-**Note: venv-selector.nvim plugin needs to configure the query starting path separately. If there is no python environment, you can delete the partial configuration of venv-selector in `./Lua/plugins/editor.Lua#L203-L217`, but LazyVim will automatically install the plugin as long as there is a python environment configured.**
+**Note: venv-selector.nvim plugin needs to configure the query starting path separately. If python lsp is not installed, you can delete part of the configuration of venv-selector in `./Lua/plugins/editor.Lua # L203-L217`. LazyVim will automatically install the plugin as long as python lsp exists.**
