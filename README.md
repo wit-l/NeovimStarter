@@ -4,7 +4,7 @@ My neovim config(Applicable to linux platform, please refer to windows branch fo
 
 Part of the configuration reference:[Effective NeoVim Setup for 2024.pdf](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/pdf/Effective%20NeoVim%20Setup%20for%202024.pdf)
 
-forked from [LazyVim](https://github.com/LazyVim/starter.git)
+Forked from [LazyVim](https://github.com/LazyVim/starter.git)
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 **Pay attention to replace the url of lazyvim with the url of this repository when cloning.**
@@ -16,7 +16,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 Open file explorer: <kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd>
 ![nvim explorer](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590250453161759025045064.png)
 
-### Completion&documentation（blink.cmp+lsp）
+### Completion&documentation（blink.cmp + lsp）
 
 Show var info under the cursor: <kbd>shift</kbd>+<kbd>k</kbd>
 
@@ -56,7 +56,7 @@ The config file of WT is [here](https://github.com/WittyCo/Dotfiles/blob/main/wi
 
 The default shortcut key for switching focus mode (WT without border) is ALT+Z in my wt config.
 
-Requirements:
+## Requirements
 
 - [gcc/g++](https://gcc.gnu.org/) **Required for c/cpp code**
 
