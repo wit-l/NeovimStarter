@@ -5,6 +5,7 @@ My neovim config(Applicable to linux platform, please refer to windows branch fo
 Part of the configuration reference:[Effective NeoVim Setup for 2024.pdf](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/pdf/Effective%20NeoVim%20Setup%20for%202024.pdf)
 
 Forked from [LazyVim](https://github.com/LazyVim/starter.git)
+
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 **Pay attention to replace the url of lazyvim with the url of this repository when cloning.**
