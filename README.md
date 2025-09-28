@@ -9,20 +9,44 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 **Pay attention to replace the url of lazyvim with the url of this repository when cloning.**
 
-UI interface:
+## UI interface
 
-<kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd> Open neo-tree file manager
-![nvim neo-tree](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267348327991726734782487.png)
-<kbd>shift</kbd>+<kbd>k</kbd> Show var info under the cursor，Use it (or <kbd>space</kbd>+<kbd>k</kbd>) to open a URL under the cursor with the default browser.
+### File explorer（snacks-explorer)
+
+Open file explorer: <kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd>
+![nvim explorer](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590250453161759025045064.png)
+
+### Completion&documentation（blink.cmp+lsp）
+
+Show var info under the cursor: <kbd>shift</kbd>+<kbd>k</kbd>
+
+Open the URL under the cursor with the default browser: <kbd>space</kbd>+<kbd>k</kbd>. Blink.cmp is responsible for display and window triggering, and the data source is lsp corresponding to language.
 ![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267351508081726735150586.png)
-<kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd> Rename a variable
+
+**Note: <kbd>space</kbd>+<kbd>k</kbd> According to the wsl2 environment configuration, the complete Linux system needs to change the command at `./lua/config/keymaps.lua#L28`, or directly delete `#L19-L32` and use <kbd>gx</kbd> built in vim to jump to the specified page in the browser.**
+
+### Variable Rename（lsp）
+
+Rename a variable: <kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd>
 ![nvim rename](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
-<kbd>;</kbd>+<kbd>f</kbd> Search and Preview files (arrange：current workspace, UI：telescope)
-![find files with telescope](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-float-window.png)
-<kbd>space</kbd>+<kbd>f</kbd>+<kbd>f</kbd> Same as above, but the preview range is larger with line numbers.(UI：fzf-lua)
-![find files with fzf-lua](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267376298081726737607064.png)
-<kbd>Ctrl</kbd>+<kbd>\\</kbd>or<kbd>/</kbd> Open / Close the terminal
-![nvim term](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267372197991726737219265.png)
+
+### File finds-according to file name/path.（snacks-picker）
+
+Search and Preview files: <kbd>space</kbd>+<kbd>f</kbd><kbd>f</kbd>
+![find files](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590253743121759025373411.png)
+
+### File finds-according to file content（snacks-picker）
+
+Search and Preview files content: <kbd>space</kbd>+<kbd>/</kbd>
+![find files](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590271943101759027193496.png)
+
+### Nvim built-in terminal（snacks-terminal）
+
+Open / Close the terminal: <kbd>Ctrl</kbd>+<kbd>\\</kbd>or<kbd>/</kbd>
+![nvim term](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590254603111759025460023.png)
+
+### Debug（vim-dadbod）
+
 <kbd>space</kbd>+<kbd>D</kbd>
 ![nvim database](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-database.png)
 
@@ -69,3 +93,9 @@ Requirements:
 - [Node](https://nodejs.org/) **Required**
 
   Many plugins that provide advanced features such as code completion and refactoring are installed using npm.
+
+## Default installed environment
+
+The default environment(lsp plugins) are "tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(for emmet.io), "pyright"(Python), "clangd"(C/C++). Unnecessary environment can delete the corresponding lsp in `./lua/plugins/lsp.lua#L11-L17`.
+
+**Note: venv-selector.nvim plugin needs to configure the query starting path separately. If there is no python environment, you can delete the partial configuration of venv-selector in `./Lua/plugins/editor.Lua#L203-L217`, but LazyVim will automatically install the plugin as long as there is a python environment configured.**
