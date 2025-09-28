@@ -97,6 +97,6 @@ WT的配置文件在 [这里](https://github.com/WittyCo/Dotfiles/blob/main/wind
 
 ## 默认已安装的环境
 
-默认安装的环境有"tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(html, css快捷语法插件), "pyright"(Python lsp), "clangd"(C/C++ lsp)。不需要的环境可以删除 `./lua/plugins/lsp.lua#L11-L17` 中对应的lsp。
+默认安装的环境有"tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(html, css快捷语法插件), "pyright"(Python lsp), "clangd"(C/C++ lsp)。对于不需要的环境，可以通过删除 `./lua/plugins/lsp.lua#L11-L17` 中对应的lsp 来卸载。
 
-**注：venv-selector.nvim插件需要单独配置查询起始路径，若无python环境可删除 `./lua/plugins/editor.lua#L203-L217` 中的venv-selector部分配置，但是只要有配置python环境，LazyVim会自动安装该插件**
+**注：venv-selector.nvim插件需要单独配置查询起始路径，若未安装python lsp可删除 `./lua/plugins/editor.lua#L203-L217` 中的venv-selector部分配置，只要有python lsp，LazyVim就会自动安装该插件。**
