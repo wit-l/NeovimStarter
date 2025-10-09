@@ -205,11 +205,11 @@ return {
     opts = {
       search = {
         miniconda_envs = {
-          command = "$FD python.exe$ D:/Software/miniconda3/envs --no-ignore-vcs --full-path -a -E Lib",
+          command = "$FD python.exe$ D:/Software/miniforge3/envs --no-ignore-vcs --full-path -a -E Lib",
           type = "anaconda",
         },
         miniconda_base = {
-          command = "$FD miniconda3//python.exe$ D:/Software/miniconda3 --no-ignore-vcs --full-path -a --color never",
+          command = "$FD miniforge3//python.exe$ D:/Software/miniforge3 --no-ignore-vcs --full-path -a --color never",
           type = "anaconda",
         },
         cwd = {
