@@ -33,6 +33,24 @@ return {
       inlay_hints = {
         enabled = false,
       },
+      ---@type lspconfig.options
+      servers = {
+        clangd = {
+          cmd = {
+            "clangd",
+            "--query-driver=g++.exe", -- 指定编译器路径
+            "--background-index",
+            "--clang-tidy",
+            "--completion-style=detailed",
+          },
+          init_options = {
+            fallbackFlags = {
+              "-std=c++17",
+              "--target=x86_64-w64-windows-gnu",
+            },
+          },
+        },
+      },
     },
   },
 }
