@@ -3,14 +3,26 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "bash",
+        "diff",
+        "jsdoc",
+        "markdown",
+        "markdown_inline",
+        "query",
         "html",
         "html_tags",
         "javascript",
         "json",
         "jsonc",
         "lua",
+        "luadoc",
+        "luap",
         "python",
         "tsx",
+        "jsx",
+        "xml",
+        "vim",
+        "vimdoc",
         "typescript",
         "yaml",
         "toml",
@@ -33,7 +45,8 @@ return {
         "latex",
       },
     },
-    config = function()
+    config = function(_, opts)
+      require("nvim-treesitter").install(opts.ensure_installed)
       local highlight = {
         "RainbowRed",
         "RainbowYellow",
