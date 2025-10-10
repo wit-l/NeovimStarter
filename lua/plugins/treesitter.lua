@@ -4,6 +4,7 @@ return {
     opts = {
       ensure_installed = {
         "html",
+        "html_tags",
         "javascript",
         "json",
         "jsonc",
