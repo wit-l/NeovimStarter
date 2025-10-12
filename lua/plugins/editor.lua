@@ -209,7 +209,7 @@ return {
           type = "anaconda",
         },
         miniconda_base = {
-          command = "$FD '/python$' /opt/miniconda3/bin --no-ignore-vcs --full-path --color never",
+          command = "$FD '/python$' /opt/miniforge/bin --no-ignore-vcs --full-path --color never",
           type = "anaconda",
         },
       },
