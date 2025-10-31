@@ -261,4 +261,13 @@ return {
       },
     },
   },
+  {
+    "sphamba/smear-cursor.nvim",
+    cond = function()
+      if os.getenv("KITTY_WINDOW_ID") ~= nil or vim.g.neovide ~= nil then
+        return false
+      end
+      return true
+    end,
+  },
 }
