@@ -25,7 +25,12 @@ keymap.set("n", "<leader>k", function()
   local url = line:match("https?://[%w-_%.%?%.:/%+=&@%%]+") or word
   if url then
     -- Invoke cmd is faster than wslview command to open win host's browser
-    vim.fn.system("/mnt/c/Windows/System32/cmd.exe /c start " .. url)
+    local version = (vim.loop or vim.uv).os_uname().version:lower()
+    if version:find("microsoft") ~= nil or version:find("wsl") ~= nil then
+      vim.fn.system("cmd.exe /c start " .. url)
+    else
+      vim.fn.system("xdg-open " .. url)
+    end
   else
     vim.lsp.buf.hover() -- 如果没有找到 URL，回退到 LSP 悬浮窗口
   end
