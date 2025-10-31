@@ -25,9 +25,9 @@ keymap.set("n", "<leader>k", function()
   local url = line:match("https?://[%w-_%.%?%.:/%+=&@%%]+") or word
   if url then
     -- Invoke cmd is faster than wslview command to open win host's browser
-    local version = (vim.loop or vim.uv).os_uname().version:lower()
-    if version:find("microsoft") ~= nil or version:find("wsl") ~= nil then
-      vim.fn.system("cmd.exe /c start " .. url)
+    local release = (vim.loop or vim.uv).os_uname().release:lower()
+    if release:find("microsoft") ~= nil or release:find("wsl") ~= nil then
+      vim.fn.system("/usr/local/bin/cmd.exe /c start " .. url)
     else
       vim.fn.system("xdg-open " .. url)
     end
