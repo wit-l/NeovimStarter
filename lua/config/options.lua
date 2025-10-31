@@ -17,4 +17,4 @@ opt.shell = "zsh"
 
 -- neovide config($XDG_CONFIG_HOME/neovide/config.toml)
 -- vim.o.guifont = "Maple Mono NF CN:h12"
-vim.g.neovide_normal_opacity = 0.6
+vim.g.neovide_normal_opacity = 0.7
