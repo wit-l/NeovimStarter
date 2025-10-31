@@ -34,7 +34,7 @@ keymap.set("n", "<leader>k", function()
   else
     vim.lsp.buf.hover() -- 如果没有找到 URL，回退到 LSP 悬浮窗口
   end
-end, vim.tbl_extend("force", opts, { desc = "Open the URL in win host" }))
+end, vim.tbl_extend("force", opts, { desc = "Open the URL with default browser" }))
 
 --New tab
 keymap.set("n", "te", ":tabedit", opts)
