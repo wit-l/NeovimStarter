@@ -68,3 +68,6 @@ end, vim.tbl_extend("force", opts, { desc = "Step Out" }))
 keymap.set("n", ".l", function()
   require("dap").step_over()
 end, vim.tbl_extend("force", opts, { desc = "Step Over" }))
+
+-- 修改visual模式下切换为块选择的快捷键为Ctrl+s
+keymap.set("v", "<C-s>", "<C-v>", opts)
