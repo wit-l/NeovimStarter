@@ -45,7 +45,7 @@ return {
           },
           init_options = {
             fallbackFlags = {
-              "-std=c++17",
+              -- "-std=c++17",
               "--target=x86_64-w64-windows-gnu",
             },
           },
