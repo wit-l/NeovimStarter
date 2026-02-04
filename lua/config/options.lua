@@ -14,6 +14,10 @@ opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 opt.path:append({ "**" })
 opt.shell = "zsh"
+opt.wrap = false
+opt.splitbelow = true -- Put new windows below current
+opt.splitright = true -- Put new windows right of current
+vim.o.fileencodings = "ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1"
 
 -- neovide config($XDG_CONFIG_HOME/neovide/config.toml)
 -- vim.o.guifont = "Maple Mono NF CN:h12"
@@ -22,3 +26,4 @@ vim.g.neovide_padding_top = 10
 vim.g.neovide_padding_bottom = 0
 vim.g.neovide_padding_right = 0
 vim.g.neovide_padding_left = 0
+-- vim.g.mkdp_port = "8000"
