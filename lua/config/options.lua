@@ -14,9 +14,9 @@ vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.path:append({ "**" })
-vim.opt.wrap = false
-vim.opt.splitbelow = true -- Put new windows below current
-vim.opt.splitright = true -- Put new windows right of current
+-- vim.opt.wrap = false
+-- vim.opt.splitbelow = true -- Put new windows below current
+-- vim.opt.splitright = true -- Put new windows right of current
 vim.opt.shell = "pwsh"
 vim.o.fileencodings = "ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1"
 -- vim.g.mkdp_port = "8000"
