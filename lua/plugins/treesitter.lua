@@ -13,7 +13,6 @@ return {
         "html_tags",
         "javascript",
         "json",
-        "jsonc",
         "lua",
         "luadoc",
         "luap",
