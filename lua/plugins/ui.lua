@@ -42,7 +42,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     opts = function(_, opts)
-      opts.options = { theme = "catppuccin" }
+      opts.options.theme = "catppuccin-mocha"
       table.insert(opts.sections.lualine_x, "fileformat")
       opts.sections.lualine_z = { "encoding", "filesize" }
     end,
