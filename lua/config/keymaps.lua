@@ -74,3 +74,7 @@ end, vim.tbl_extend("force", opts, { desc = "Step Out" }))
 keymap.set("n", ".l", function()
   require("dap").step_over()
 end, vim.tbl_extend("force", opts, { desc = "Step Over" }))
+
+-- 将视觉块选择模式映射到 <C-q>
+keymap.set("n", "<C-q>", "<C-v>", opts)
+keymap.set("v", "<C-q>", "<C-v>", opts)
