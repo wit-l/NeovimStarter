@@ -229,7 +229,7 @@ return {
         documentation = { window = { border = "rounded" } },
         trigger = {
           show_on_insert = true,
-          show_on_backspace = true,
+          -- show_on_backspace = true,
         },
       })
       -- 设置补全菜单浮动窗口的背景透明
@@ -238,10 +238,6 @@ return {
       vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
       vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
     end,
-    keymap = {
-      preset = "enter",
-      ["<CR>"] = { "select_and_accept" },
-    },
   },
   {
     "sphamba/smear-cursor.nvim",
