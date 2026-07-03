@@ -11,7 +11,7 @@ keymap.set("n", "o", "o<Esc>", opts)
 -- Insert one line below in insert mode without break current line)
 keymap.set(
   "i",
-  "<C-j>",
+  "<C-CR>",
   "<Esc>A<CR>",
   vim.tbl_extend("force", opts, { desc = "Insert new line below from anywhere in line" })
 )
