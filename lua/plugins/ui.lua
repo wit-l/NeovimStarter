@@ -143,7 +143,10 @@ return {
         sections = {
           {
             section = "terminal",
-            cmd = "chafa C:\\Users\\witty\\Pictures\\t1.png --format symbols --symbols vhalf --size 60x20 --stretch; sleep .1",
+            -- cmd = "chafa 'C:/Users/witty/OneDrive/图片/Saved Pictures/SFW/background/rain.jpg' --format symbols --symbols vhalf --size 60x20 --stretch; sleep .1",
+            cmd = "chafa "
+              .. os.getenv("ONEDRIVE")
+              .. "'/图片/Saved Pictures/SFW/background/rain.jpg' --size 60x20 --stretch; sleep .1",
             height = 20,
             padding = 1,
           },
