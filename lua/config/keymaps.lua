@@ -27,7 +27,7 @@ keymap.set("n", "<leader>k", function()
     -- Invoke cmd is faster than wslview command to open win host's browser
     local release = (vim.loop or vim.uv).os_uname().release:lower()
     if release:find("microsoft") ~= nil or release:find("wsl") ~= nil then
-      vim.fn.system("/usr/local/bin/cmd.exe /c start " .. url)
+      vim.fn.system("/usr/local/bin/cmd.exe /c start " .. url:gsub(":+$", ""))
     else
       vim.fn.system("xdg-open " .. url)
     end
