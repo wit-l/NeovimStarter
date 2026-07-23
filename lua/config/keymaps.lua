@@ -9,7 +9,7 @@ keymap.set("n", "O", "O<Esc>", opts)
 keymap.set("n", "o", "o<Esc>", opts)
 
 -- Insert one line below in insert mode without break current line)
-keymap.set("i", "<C-j>", "<Esc>A<CR>", vim.tbl_extend("force", opts))
+keymap.set("i", "<C-CR>", "<Esc>A<CR>", opts)
 
 -- Add the default action for <leader>+k to open the URL in win host's default browser(for wsl2)
 keymap.set("n", "<leader>k", function()
