@@ -24,7 +24,7 @@ return {
     opts = {
       close_if_last_window = false,
       window = {
-        auto_expand_width = true,
+        width = 30,
       },
       filesystem = {
         filtered_items = { visible = false, hide_dotfiles = false },
