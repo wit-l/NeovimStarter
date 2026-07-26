@@ -75,7 +75,7 @@ return {
     end,
   },
 
-  -- filename
+  -- incline - floating filename line
   {
     "b0o/incline.nvim",
     enabled = false,
