@@ -271,4 +271,15 @@ return {
       vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
     end,
   },
+  {
+    "luxvim/nvim-luxterm",
+    opts = {
+      keymaps = {
+        toggle_manager = "<C-\\>",
+        prev_session = "<C-k>",
+        next_session = "<C-j>",
+        hide_terminal = "<C-[>",
+      },
+    },
+  },
 }
