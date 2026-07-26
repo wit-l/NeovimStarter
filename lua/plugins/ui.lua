@@ -1,4 +1,36 @@
+---@module "neo-tree"
+---@module "lazy"
+---@type LazySpec
 return {
+  -- neo-tree file manager sidebar
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    version = "^3.x",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    cmd = "NeoTree",
+    keys = {
+      { "<leader>e", "<cmd>Neotree toggle<CR>", desc = "Toggle Neo-tree" },
+    },
+    ---@type neotree.Config
+    opts = {
+      close_if_last_window = false,
+      window = {
+        auto_expand_width = true,
+      },
+      filesystem = {
+        filtered_items = { visible = false, hide_dotfiles = false },
+        follow_current_file = { enabled = true },
+        group_empty_dirs = true,
+        use_libuv_file_watcher = true,
+      },
+    },
+  },
+
   {
     "Bekaboo/dropbar.nvim",
     event = "BufReadPre",
@@ -126,6 +158,7 @@ return {
       image = {
         enabled = true,
       },
+      explorer = { replace_netrw = false, trash = false },
       words = { enabled = true },
       statuscolumn = {
         enabled = true,
