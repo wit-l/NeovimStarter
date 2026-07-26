@@ -1,3 +1,6 @@
+---@module "venv-selector"
+---@module "lazy"
+---@type LazySpec
 return {
   {
     "chrisgrieser/nvim-spider",
@@ -30,6 +33,7 @@ return {
   },
   {
     "linux-cultist/venv-selector.nvim",
+    ---@type venv-selector.Settings
     opts = {
       search = {
         miniconda_envs = {
