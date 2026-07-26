@@ -42,12 +42,6 @@ keymap.set("n", "<C-w><right>", "<C-w>>", opts)
 keymap.set("n", "<C-w><up>", "<C-w>+", opts)
 keymap.set("n", "<C-w><down>", "<C-w>-", opts)
 
--- Open/Close Terminal
-keymap.set("n", "<c-\\>", function()
-  Snacks.terminal()
-end, vim.tbl_extend("force", opts, { desc = "Terminal (cwd Dir)" }))
-keymap.set("t", "<C-\\>", "<cmd>close<cr>", vim.tbl_extend("force", opts, { desc = "Hide Terminal" }))
-
 -- Jump next/prev word in InsertMode
 keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i", opts)
 keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i", opts)
