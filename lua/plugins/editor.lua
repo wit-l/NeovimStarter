@@ -26,6 +26,7 @@ return {
   {
     "mg979/vim-visual-multi",
     branch = "master",
+    enabled = false,
   },
   {
     "linux-cultist/venv-selector.nvim",
