@@ -276,5 +276,14 @@ return {
       end
       return true
     end,
+    "luxvim/nvim-luxterm",
+    opts = {
+      keymaps = {
+        toggle_manager = "<C-\\>",
+        prev_session = "<C-k>",
+        next_session = "<C-j>",
+        hide_terminal = "<C-[>",
+      },
+    },
   },
 }
