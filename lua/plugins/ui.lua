@@ -156,13 +156,10 @@ return {
     priority = 1000,
     ---@type snacks.Config
     opts = {
-      image = {
-        enabled = true,
-      },
+      image = { enabled = true },
       explorer = { replace_netrw = false, trash = false },
       words = { enabled = true },
       statuscolumn = {
-        enabled = true,
         folds = {
           open = true, -- show open fold icons
           git_hl = true, -- use Git Signs hl for fold icons
@@ -184,17 +181,6 @@ return {
             pane = 2,
             { section = "keys", gap = 1, padding = 1 },
             { section = "startup" },
-          },
-        },
-      },
-      picker = {
-        previewers = {
-          diff = {
-            builtin = false,
-            cmd = "delta",
-          },
-          git = {
-            builtin = false,
           },
         },
       },
