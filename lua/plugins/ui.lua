@@ -1,4 +1,8 @@
+---@module "snacks"
+---@module "luxterm"
+---@module "bufferline"
 ---@module "neo-tree"
+---@module "blink.cmp"
 ---@module "lazy"
 ---@type LazySpec
 return {
@@ -31,10 +35,12 @@ return {
     },
   },
 
+  -- dropbar - shows symbols in the window
   {
     "Bekaboo/dropbar.nvim",
     event = "BufReadPre",
   },
+  -- noice.nvim - replaces the vim ui for messages, commands and more
   {
     "folke/noice.nvim",
     opts = function(_, opts)
@@ -50,11 +56,12 @@ return {
     end,
   },
 
-  -- bufferline
+  -- bufferline - fancy tabs
   {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
+    ---@type bufferline.UserConfig
     opts = {
       options = {
         mode = "buffers",
@@ -64,7 +71,7 @@ return {
     },
   },
 
-  --- statusline
+  -- lualine - statusline
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -132,6 +139,8 @@ return {
   --     },
   --   },
   -- },
+
+  -- snacks.nvim - collection of neovim tools
   {
     "folke/snacks.nvim",
     priority = 1000,
@@ -167,8 +176,9 @@ return {
       },
     },
   },
+  -- rainbow-delimiters - rainbow colored brackets
   {
-    "hiphish/rainbow-delimiters.nvim", -- Powered by Tree-sitter
+    "hiphish/rainbow-delimiters.nvim",
     submodules = false,
     opts = {
       strategy = {
@@ -195,8 +205,10 @@ return {
     },
     main = "rainbow-delimiters.setup",
   },
+  -- blink.cmp - completion engine
   {
     "saghen/blink.cmp",
+    ---@param opts blink.cmp.Config
     opts = function(_, opts)
       opts.completion = vim.tbl_deep_extend("force", opts.completion or {}, {
         menu = {

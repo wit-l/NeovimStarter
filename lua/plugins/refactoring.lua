@@ -1,3 +1,5 @@
+---@module "lazy"
+---@type LazySpec
 return {
   {
     "smjonas/inc-rename.nvim",
@@ -33,6 +35,5 @@ return {
         expr = false,
       },
     },
-    opts = {},
   },
 }
