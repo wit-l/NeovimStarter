@@ -255,6 +255,8 @@ return {
       end
       return true
     end,
+  },
+  {
     "luxvim/nvim-luxterm",
     opts = {
       keymaps = {
