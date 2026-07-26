@@ -76,12 +76,13 @@ return {
     end,
   },
 
-  -- filename
+  -- incline - floating filename line
   {
     "b0o/incline.nvim",
     -- enabled = false,
     event = "BufReadPre",
     priority = 1200,
+    enabled = false,
     config = function()
       local helpers = require("incline.helpers")
       require("incline").setup({
