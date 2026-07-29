@@ -263,7 +263,7 @@ return {
         toggle_manager = "<C-\\>",
         prev_session = "<C-k>",
         next_session = "<C-j>",
-        hide_terminal = "<C-[>",
+        hide_terminal = "<C-q>",
       },
     },
   },
