@@ -264,6 +264,7 @@ return {
         next_session = "<C-j>",
         hide_terminal = "<C-q>",
       },
+      session_as_buffer = false,
     },
   },
 }
