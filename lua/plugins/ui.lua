@@ -1,5 +1,4 @@
 ---@module "snacks"
----@module "luxterm"
 ---@module "bufferline"
 ---@module "neo-tree"
 ---@module "blink.cmp"
