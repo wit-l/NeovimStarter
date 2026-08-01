@@ -71,14 +71,62 @@ return {
   },
 
   -- lualine - statusline
+  -- Windows branch fix for #1452 (path sep / vs \); drop when upstream merges.
+  -- Trigger: Neovim enables 'shellslash' on Windows when 'shell' contains "sh"
+  -- (pwsh/powershell), so expand() yields `/` paths while lualine walks with `\`.
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
+    pin = true,
     opts = function(_, opts)
       opts.options.theme = "catppuccin-mocha"
       table.insert(opts.sections.lualine_x, "fileformat")
       opts.sections.lualine_z = { "encoding", "filesize" }
+
+      -- Runtime fallback if the pinned plugin copy is refreshed without the fix.
+      if vim.fn.has("win32") == 1 then
+        local ok, git_branch = pcall(require, "lualine.components.branch.git_branch")
+        if ok and git_branch and not git_branch.__win_sep_fix then
+          local orig = git_branch.find_git_dir
+          local update_current_git_dir
+          for i = 1, 20 do
+            local name, val = debug.getupvalue(orig, i)
+            if not name then
+              break
+            end
+            if name == "update_current_git_dir" then
+              update_current_git_dir = val
+              break
+            end
+          end
+          git_branch.find_git_dir = function(dir_path)
+            local from_autocmd = dir_path == nil
+            local path = dir_path or vim.fn.expand("%:p:h")
+            if package.loaded.oil then
+              local oil_ok, oil = pcall(require, "oil")
+              if oil_ok then
+                local dir_ok, dir = pcall(oil.get_current_dir)
+                if dir_ok and dir and dir ~= "" then
+                  path = vim.fn.fnamemodify(dir, ":p:h")
+                end
+              end
+            end
+            if type(path) == "string" and path:match("term://.*") then
+              path = vim.fn.expand(path:gsub("term://(.+)//.+", "%1"))
+            end
+            if type(path) == "string" then
+              path = path:gsub("/", "\\")
+            end
+            local git_dir = orig(path)
+            if from_autocmd and update_current_git_dir then
+              update_current_git_dir(git_dir)
+            end
+            return git_dir
+          end
+          git_branch.__win_sep_fix = true
+        end
+      end
     end,
   },
 
