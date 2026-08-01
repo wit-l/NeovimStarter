@@ -53,4 +53,8 @@ return {
     },
   },
   -- flash patch: https://github.com/onion108/flash.nvim.git
+  {
+    "folke/flash.nvim",
+    pin = true,
+  },
 }

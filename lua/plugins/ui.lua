@@ -251,6 +251,7 @@ return {
   },
   {
     "luxvim/nvim-luxterm",
+    pin = true,
     opts = {
       keymaps = {
         toggle_manager = "<C-\\>",
