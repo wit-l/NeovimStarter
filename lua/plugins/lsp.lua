@@ -71,13 +71,13 @@ return {
       },
       servers = {
         clangd = {
-          cmd = {
-            "clangd",
-            "--query-driver=g++.exe", -- 指定编译器路径
-            "--background-index",
-            "--clang-tidy",
-            "--completion-style=detailed",
-          },
+          -- cmd = {
+          --   "clangd",
+          --   "--query-driver=g++.exe", -- 指定编译器路径
+          --   "--background-index",
+          --   "--clang-tidy",
+          --   "--completion-style=detailed",
+          -- },
           init_options = {
             fallbackFlags = {
               -- "-std=c++17",
