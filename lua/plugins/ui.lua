@@ -295,6 +295,9 @@ return {
       vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
       vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
       vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
+      opts.keymap = {
+        ["<C-i>"] = { "show", "show_documentation", "hide_documentation" },
+      }
     end,
   },
   {
