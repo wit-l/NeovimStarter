@@ -255,9 +255,9 @@ return {
   -- blink.cmp - completion engine
   {
     "saghen/blink.cmp",
-    ---@param opts blink.cmp.Config
-    opts = function(_, opts)
-      opts.completion = vim.tbl_deep_extend("force", opts.completion or {}, {
+    ---@type blink.cmp.Config
+    opts = {
+      completion = {
         menu = {
           border = "rounded",
           draw = {
@@ -268,14 +268,12 @@ return {
                   local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
                   return kind_icon
                 end,
-                -- (optional) use highlights from mini.icons
                 highlight = function(ctx)
                   local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                   return hl
                 end,
               },
               kind = {
-                -- (optional) use highlights from mini.icons
                 highlight = function(ctx)
                   local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                   return hl
@@ -285,19 +283,24 @@ return {
           },
         },
         documentation = { window = { border = "rounded" } },
-        -- trigger = {
-        -- show_on_insert = true,
-        -- show_on_backspace = true,
-        -- },
+      },
+      -- merged with LazyVim: { preset = "enter", ["<C-y>"] = ... }
+      keymap = {
+        ["<A-i>"] = { "show", "show_documentation", "hide_documentation" },
+      },
+    },
+    -- highlights are not blink opts; use init (do not set config — LazyVim owns setup)
+    init = function()
+      local function clear_cmp_bg()
+        vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
+        vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
+        vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
+      end
+      clear_cmp_bg()
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        group = vim.api.nvim_create_augroup("blink_cmp_transparent", { clear = true }),
+        callback = clear_cmp_bg,
       })
-      -- 设置补全菜单浮动窗口的背景透明
-      -- 对于 Pmenu (补全菜单) 相关的高亮组，也可以尝试设置
-      vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
-      vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "none" })
-      vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "none" })
-      opts.keymap = {
-        ["<C-i>"] = { "show", "show_documentation", "hide_documentation" },
-      }
     end,
   },
   {
