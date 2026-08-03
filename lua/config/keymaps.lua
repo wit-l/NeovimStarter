@@ -31,11 +31,6 @@ keymap.set("n", "<leader>k", function()
   end
 end, vim.tbl_extend("force", opts, { desc = "Open the URL with default browser" }))
 
---New tab
-keymap.set("n", "te", ":tabedit", opts)
-keymap.set("n", "<tab>", ":tabnext<CR>", opts)
-keymap.set("n", "<S-tab>", ":tabprev<CR>", opts)
-
 -- Move window
 keymap.set("n", "sj", "<C-w>j", opts)
 keymap.set("n", "sk", "<C-w>k", opts)
