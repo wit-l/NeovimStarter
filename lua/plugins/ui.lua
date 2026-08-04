@@ -317,6 +317,37 @@ return {
       -- merged with LazyVim: { preset = "enter", ["<C-y>"] = ... }
       keymap = {
         ["<A-i>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<Tab>"] = {
+          function(cmp)
+            if not cmp.is_visible() then
+              local line = vim.fn.line(".")
+              local col = vim.fn.col(".")
+              local cur_line = vim.fn.getline(line)
+              local cur_indent = #cur_line:match("^%s*")
+              local ok, target_indent = pcall(function()
+                return require("nvim-treesitter.indent").get_indent(line)
+              end)
+              if ok and target_indent and target_indent >= 0 and cur_indent < target_indent then
+                if col <= cur_indent + 1 or cur_line:match("^%s*$") then
+                  vim.schedule(function()
+                    local indent_str = vim.bo.expandtab and string.rep(" ", target_indent)
+                      or string.rep("\t", math.floor(target_indent / vim.fn.shiftwidth()))
+                    vim.api.nvim_buf_set_lines(0, line - 1, line, false, { indent_str })
+                    vim.api.nvim_win_set_cursor(0, { line, #indent_str })
+                  end)
+                  return true
+                end
+              end
+            end
+            if cmp.snippet_active() then
+              return cmp.accept()
+            else
+              return cmp.select_and_accept()
+            end
+          end,
+          "snippet_forward",
+          "fallback",
+        },
       },
     },
     -- highlights are not blink opts; use init (do not set config — LazyVim owns setup)
