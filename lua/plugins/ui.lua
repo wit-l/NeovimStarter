@@ -253,18 +253,18 @@ return {
     main = "rainbow-delimiters.setup",
   },
 
-  -- indent-blankline rainbow scope highlights
+  -- indent-blankline rainbow scope highlights (uses catppuccin RainbowDelimiter* groups)
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = function(_, opts)
       local highlight = {
-        "RainbowRed",
-        "RainbowYellow",
-        "RainbowBlue",
-        "RainbowOrange",
-        "RainbowGreen",
-        "RainbowViolet",
-        "RainbowCyan",
+        "RainbowDelimiterRed",
+        "RainbowDelimiterYellow",
+        "RainbowDelimiterBlue",
+        "RainbowDelimiterOrange",
+        "RainbowDelimiterGreen",
+        "RainbowDelimiterViolet",
+        "RainbowDelimiterCyan",
       }
       opts.scope = vim.tbl_deep_extend("force", opts.scope or {}, {
         highlight = highlight,
@@ -272,19 +272,8 @@ return {
       })
       return opts
     end,
-    -- HIGHLIGHT_SETUP must be registered BEFORE ibl.setup().
-    -- config overrides main="ibl" but replicates its setup call.
     config = function(_, opts)
       local hooks = require("ibl.hooks")
-      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-        vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-        vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
-        vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
-        vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-        vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
-        vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
-        vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-      end)
       require("ibl").setup(opts)
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
     end,
