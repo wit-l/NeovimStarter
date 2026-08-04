@@ -57,4 +57,13 @@ return {
     "folke/flash.nvim",
     pin = true,
   },
+  {
+    "nvim-mini/mini.pairs",
+    enabled = false,
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
+  },
 }
