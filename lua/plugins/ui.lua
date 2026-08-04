@@ -2,6 +2,8 @@
 ---@module "bufferline"
 ---@module "neo-tree"
 ---@module "blink.cmp"
+---@module "ibl"
+---@module "rainbow-delimiters"
 ---@module "lazy"
 ---@type LazySpec
 return {
@@ -176,6 +178,7 @@ return {
   {
     "hiphish/rainbow-delimiters.nvim",
     submodules = false,
+    ---@type rainbow_delimiters.config
     opts = {
       strategy = {
         [""] = "rainbow-delimiters.strategy.global",
@@ -205,6 +208,7 @@ return {
   -- indent-blankline rainbow scope highlights (uses catppuccin RainbowDelimiter* groups)
   {
     "lukas-reineke/indent-blankline.nvim",
+    ---@param opts ibl.config
     opts = function(_, opts)
       local highlight = {
         "RainbowDelimiterRed",
