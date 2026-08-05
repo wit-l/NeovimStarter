@@ -349,6 +349,49 @@ return {
           "fallback",
         },
       },
+      sources = {
+        transform_items = function(ctx, items)
+          local ft = vim.bo.filetype
+          if ft ~= "typescriptreact" and ft ~= "javascriptreact" then
+            return items
+          end
+          local in_jsx = false
+          local ok, node = pcall(vim.treesitter.get_node)
+          if ok and node then
+            local jsx = {
+              jsx_element = true,
+              jsx_opening_element = true,
+              jsx_closing_element = true,
+              jsx_self_closing_element = true,
+              jsx_text = true,
+              jsx_expression = true,
+              jsx_attribute = true,
+              jsx_fragment = true,
+              jsx_opening_fragment = true,
+              jsx_closing_fragment = true,
+            }
+            while node do
+              if jsx[node:type()] then
+                in_jsx = true
+                break
+              end
+              node = node:parent()
+            end
+          end
+          if in_jsx then
+            return items
+          end
+          local filtered = {}
+          for _, item in ipairs(items) do
+            if item.source_id == "lsp" and (item.client_name or ""):find("emmet") then
+              -- skip emmet items outside JSX
+            else
+              filtered[#filtered + 1] = item
+            end
+          end
+          return filtered
+        end,
+      },
     },
     -- highlights are not blink opts; use init (do not set config — LazyVim owns setup)
     init = function()
