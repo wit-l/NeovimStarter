@@ -2,20 +2,6 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- WSL: use Windows clipboard instead of wl-copy (avoids hangs under WSLg)
--- vim.g.clipboard = {
---   name = "WslClipboard",
---   copy = {
---     ["+"] = "clip.exe",
---     ["*"] = "clip.exe",
---   },
---   paste = {
---     ["+"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---     ["*"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---   },
---   cache_enabled = 0,
--- }
-
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
