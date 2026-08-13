@@ -15,21 +15,19 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 ### File explorer（snacks-explorer)
 
 Open file explorer: <kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd>
-![nvim explorer](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590250453161759025045064.png)
+![neo tree](https://fastly.jsdelivr.net/gh/wit-l/FileBed@main/images/17866379418211786636638275.png)
 
 ### Completion&documentation（blink.cmp + lsp）
 
 Show var info under the cursor: <kbd>shift</kbd>+<kbd>k</kbd>
 
 Open the URL under the cursor with the default browser: <kbd>space</kbd>+<kbd>k</kbd>. Blink.cmp is responsible for display and window triggering, and the data source is lsp corresponding to language.
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267351508081726735150586.png)
-
-**Note: <kbd>space</kbd>+<kbd>k</kbd> According to the wsl2 environment configuration, the complete Linux system needs to change the command at `./lua/config/keymaps.lua#L28`, or directly delete `#L19-L32` and use <kbd>gx</kbd> built in vim to jump to the specified page in the browser.**
+![nvim hover](https://fastly.jsdelivr.net/gh/wit-l/FileBed@main/images/17866383706191786638346624.png)
 
 ### Variable Rename（lsp）
 
 Rename a variable: <kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd>
-![nvim rename](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
+![nvim rename](https://fastly.jsdelivr.net/gh/wit-l/FileBed@main/images/17866384266201786638426041.png)
 
 ### File finds-according to file name/path.（snacks-picker）
 
@@ -97,6 +95,6 @@ The default shortcut key for switching focus mode (WT without border) is ALT+Z i
 
 ## Default installed environment
 
-The default environment(lsp plugins) are "tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(for emmet.io), "pyright"(Python), "clangd"(C/C++). For unnecessary environment, it can be uninstalled by deleting the corresponding lsp in `./lua/plugins/lsp.lua#L11-L17`.
+The default environment(lsp plugins) are "tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(for emmet.io), "pyright"(Python), "clangd"(C/C++). For unnecessary environment, it can be uninstalled by deleting the corresponding lsp in `./lua/plugins/lsp.lua#L33-L54`.
 
-**Note: venv-selector.nvim plugin needs to configure the query starting path separately. If python lsp is not installed, you can delete part of the configuration of venv-selector in `./Lua/plugins/editor.Lua # L203-L217`. LazyVim will automatically install the plugin as long as python lsp exists.**
+**Note: venv-selector.nvim plugin needs to configure the query starting path separately. If python lsp is not installed, you can delete part of the configuration of venv-selector in `./Lua/plugins/editor.Lua # L34-L49`. LazyVim will automatically install the plugin as long as python lsp exists.**

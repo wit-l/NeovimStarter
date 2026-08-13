@@ -15,19 +15,18 @@
 ### 文件管理器（snacks-explorer)
 
 打开文件管理器：<kbd>space</kbd>+<kbd>e</kbd>/<kbd>E</kbd>
-![nvim explorer](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17590250453161759025045064.png)
+![neo tree](https://fastly.jsdelivr.net/gh/wit-l/FileBed@main/images/17866379418211786636638275.png)
 
 ### 补全&提示文档（blink.cmp+lsp）
 
 查看光标处变量的提示信息：<kbd>shift</kbd>+<kbd>k</kbd>
 跳转浏览器访问光标下URL：<kbd>space</kbd>+<kbd>k</kbd>)。其中blink.cmp负责显示与窗口触发，数据来源为语言对应lsp。
-![nvim hover](https://cdn.jsdelivr.net/gh/wit-l/filebed@main/images/17267351508081726735150586.png)
-【注：<kbd>space</kbd>+<kbd>k</kbd>根据wsl2环境配置，完整Linux系统需要更改 `./lua/config/keymaps.lua#L28` 处的命令, 或者直接删除`#L19-L32`，使用vim内置的<kbd>gx</kbd>跳转到浏览器中指定页面】
+![nvim hover](https://fastly.jsdelivr.net/gh/wit-l/FileBed@main/images/17866383706191786638346624.png)
 
 ### 重命名（lsp）
 
 变量重命名（对光标下的）：<kbd>space</kbd>+<kbd>c</kbd>+<kbd>r</kbd>(需要lsp支持，将对整个项目范围有效)
-![nvim rename](https://cdn.jsdelivr.net/gh/wit-l/static_resources@latest/images/pic/nvim-hover-2.png)
+![nvim rename](https://fastly.jsdelivr.net/gh/wit-l/FileBed@main/images/17866384266201786638426041.png)
 
 ### 文件查找-根据文件/路径名（snacks-picker）
 
@@ -97,6 +96,6 @@ WT的配置文件在 [这里](https://github.com/WittyCo/Dotfiles/blob/main/wind
 
 ## 默认已安装的环境
 
-默认安装的环境有"tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(html, css快捷语法插件), "pyright"(Python lsp), "clangd"(C/C++ lsp)。对于不需要的环境，可以通过删除 `./lua/plugins/lsp.lua#L11-L17` 中对应的lsp 来卸载。
+默认安装的环境有"tailwindcss-language-server", "typescript-language-server", "html-lsp", "css-lsp", "emmet-language-server"(html, css快捷语法插件), "pyright"(Python lsp), "clangd"(C/C++ lsp)。对于不需要的环境，可以通过删除 `./lua/plugins/lsp.lua#L33-L54` 中对应的lsp 来卸载。
 
-**注：venv-selector.nvim插件需要单独配置查询起始路径，若未安装python lsp可删除 `./lua/plugins/editor.lua#L203-L217` 中的venv-selector部分配置，只要有python lsp，LazyVim就会自动安装该插件。**
+**注：venv-selector.nvim插件需要单独配置查询起始路径，若未安装python lsp可删除 `./lua/plugins/editor.lua#L34-L49` 中的venv-selector部分配置，只要有python lsp，LazyVim就会自动安装该插件。**
