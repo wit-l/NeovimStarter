@@ -350,42 +350,58 @@ return {
         },
       },
       sources = {
+        -- blink/emmet have no context-aware JSX option; filter emmet outside markup.
         transform_items = function(ctx, items)
-          local ft = vim.bo.filetype
+          local ft = vim.bo[ctx.bufnr].filetype
           if ft ~= "typescriptreact" and ft ~= "javascriptreact" then
             return items
           end
-          local in_jsx = false
-          local ok, node = pcall(vim.treesitter.get_node)
+          local row = ctx.cursor[1] - 1
+          local col = math.max((ctx.cursor[2] or 1) - 1, 0)
+          local ok, node = pcall(vim.treesitter.get_node, { bufnr = ctx.bufnr, pos = { row, col } })
+          local allow_emmet = false
           if ok and node then
-            local jsx = {
+            -- deny first: JS `{...}`, generics `<Table<IDataType>`, attributes
+            local deny = {
+              jsx_expression = true,
+              jsx_attribute = true,
+              type_arguments = true,
+              type_parameters = true,
+            }
+            local allow = {
               jsx_element = true,
+              jsx_text = true,
               jsx_opening_element = true,
               jsx_closing_element = true,
               jsx_self_closing_element = true,
-              jsx_text = true,
-              jsx_expression = true,
-              jsx_attribute = true,
               jsx_fragment = true,
               jsx_opening_fragment = true,
               jsx_closing_fragment = true,
             }
             while node do
-              if jsx[node:type()] then
-                in_jsx = true
+              local t = node:type()
+              if deny[t] then
+                allow_emmet = false
+                break
+              end
+              if allow[t] then
+                allow_emmet = true
                 break
               end
               node = node:parent()
             end
           end
-          if in_jsx then
+          if allow_emmet then
             return items
           end
           local filtered = {}
           for _, item in ipairs(items) do
-            if item.source_id == "lsp" and (item.client_name or ""):find("emmet") then
-              -- skip emmet items outside JSX
-            else
+            local client = item.client_name
+            if not client and item.client_id then
+              local lsp_client = vim.lsp.get_client_by_id(item.client_id)
+              client = lsp_client and lsp_client.name or ""
+            end
+            if not (item.source_id == "lsp" and tostring(client):find("emmet", 1, true)) then
               filtered[#filtered + 1] = item
             end
           end
