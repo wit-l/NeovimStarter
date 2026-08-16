@@ -36,14 +36,17 @@ return {
     ---@type venv-selector.Settings
     opts = {
       search = {
+        -- Override built-in ~/miniconda3 searches for this miniforge layout:
         miniconda_envs = {
-          command = "$FD 'bin/python$' ~/.config/conda/envs --no-ignore-vcs --full-path --color never",
+          command = "$FD 'bin/python$' ~/.config/conda/envs /opt/miniforge/envs --no-ignore-vcs --full-path --color never --max-depth 3",
           type = "anaconda",
         },
         miniconda_base = {
-          command = "$FD '/python$' /opt/miniforge/bin --no-ignore-vcs --full-path --color never",
+          command = "$FD '/python$' /opt/miniforge/bin --no-ignore-vcs --full-path --color never --max-depth 1",
           type = "anaconda",
         },
+        anaconda_envs = false,
+        anaconda_base = false,
       },
     },
   },
