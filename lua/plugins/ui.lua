@@ -155,6 +155,14 @@ return {
         },
       },
       indent = { enabled = true },
+      terminal = {
+        win = {
+          keys = {
+            hide_slash = false,
+            hide_underscore = false,
+          },
+        },
+      },
       dashboard = {
         sections = {
           {
@@ -386,12 +394,83 @@ return {
     pin = true,
     opts = {
       keymaps = {
-        toggle_manager = "<C-\\>",
+        toggle_manager = "<C-/>",
         prev_session = "<C-k>",
         next_session = "<C-j>",
         hide_terminal = "<C-q>",
       },
       session_as_buffer = false,
     },
+    config = function(_, opts)
+      require("luxterm").setup(opts)
+
+      -- LazyVim 在 VeryLazy 会用 Snacks.terminal 覆盖 <C-/>，需在 LazyVimKeymaps 之后重绑
+      local function bind_toggle_manager()
+        local key = opts.keymaps.toggle_manager
+        local toggle = function()
+          require("luxterm.core").toggle_manager()
+        end
+        local map_opts = { silent = true, desc = "Toggle Luxterm manager" }
+        for _, lhs in ipairs({ "<C-/>", "<C-_>", key }) do
+          pcall(vim.keymap.del, { "n", "t" }, lhs)
+        end
+        vim.keymap.set({ "n", "t" }, key, toggle, map_opts)
+        if key == "<C-/>" then
+          vim.keymap.set({ "n", "t" }, "<C-_>", toggle, { silent = true, desc = "which_key_ignore" })
+        end
+      end
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "LazyVimKeymaps",
+        group = vim.api.nvim_create_augroup("luxterm_keymaps", { clear = true }),
+        callback = bind_toggle_manager,
+      })
+      if vim.v.vim_did_enter == 1 then
+        vim.schedule(bind_toggle_manager)
+      end
+
+      -- 补双击 <Esc>/<C-[> → normal（上游见 floating_window.lua:345-347）
+      local events = require("luxterm.events")
+      local session_manager = require("luxterm.session_manager")
+      local timers = {}
+
+      local function setup_double_esc(bufnr)
+        if not vim.api.nvim_buf_is_valid(bufnr) or timers[bufnr] then
+          return
+        end
+        if not session_manager.get_session_by_buffer(bufnr) then
+          return
+        end
+
+        local timer = vim.uv.new_timer()
+        timers[bufnr] = timer
+
+        local function on_escape()
+          if timer:is_active() then
+            timer:stop()
+            vim.cmd.stopinsert()
+          else
+            timer:start(200, 0, function() end)
+            return "<Esc>"
+          end
+        end
+
+        local esc_opts = {
+          buffer = bufnr,
+          expr = true,
+          silent = true,
+          desc = "Double escape to normal mode",
+        }
+        vim.keymap.set("t", "<Esc>", on_escape, esc_opts)
+        vim.keymap.set("t", "<C-[>", on_escape, esc_opts)
+      end
+
+      events.on(events.SESSION_CREATED, function(payload)
+        setup_double_esc(payload.session.bufnr)
+      end)
+
+      for _, session in ipairs(session_manager.get_all_sessions()) do
+        setup_double_esc(session.bufnr)
+      end
+    end,
   },
 }
